@@ -1,28 +1,38 @@
-<!-- app.component.html -->
 <app-navbar></app-navbar>
-
 <div class="login">
   <div class="logindiv">
     <img src="/Login/Loginimg.png" alt="Logo" class="logo-image">
   </div>
   <div class="logindiv1">
     <div class="login-container">
-      <form action="/login" method="post" id="loginForm">
+      <form *ngIf="!isOtpSent" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <hr class="hr-divider">
         <h2>लॉगीन</h2>
         <hr class="hr-divider">
-
         <div class="form-group">
           <label for="username" class="visually-hidden">Username</label>
-          <input type="text" id="username" name="username" placeholder="युजरनमे" required>
+          <input type="text" id="username" name="username" placeholder="युजरनेम" required 
+                 pattern="^[0-9]{10}$" ngModel>
+          <div *ngIf="loginForm.controls['username']?.invalid && loginForm.controls['username']?.touched">
+            <small class="error-message">वैध 10 अंकी मोबाइल नंबर प्रविष्ट करा</small>
+          </div>
         </div>
-
         <div class="form-group">
           <label for="password" class="visually-hidden">Password</label>
-          <input type="password" id="password" name="password" placeholder="पासवर्ड" required>
+          <input type="password" id="password" name="password" placeholder="पासवर्ड" required 
+                 pattern=".{8,}" ngModel>
+          <div *ngIf="loginForm.controls['password']?.invalid && loginForm.controls['password']?.touched">
+            <small class="error-message">पासवर्ड फक्त 8 वर्णांचा असावा</small>
+          </div>
         </div>
-        <button type="submit">लॉगीन</button>
+        <button type="submit" [disabled]="loginForm.invalid">लॉगीन</button>
       </form>
+      <div *ngIf="isOtpSent" class="otp-verification">
+        <h3>OTP Verification</h3>
+        <p *ngIf="generatedOtp">Your OTP is: <strong>{{ generatedOtp }}</strong></p>
+        <input type="text" [(ngModel)]="otp" placeholder="Enter OTP" class="otp-input">
+        <button (click)="verifyOtp()">Verify OTP</button>
+      </div>
     </div>
   </div>
 </div>

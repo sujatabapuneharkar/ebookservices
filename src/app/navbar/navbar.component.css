@@ -36,6 +36,7 @@ body {
 /* Second Navigation Styles */
 .secondnav {
   display: flex;
+  background-image: url(/bgpaper.jpeg);
   align-items: center;
   justify-content: space-around;
   padding: 5px 20px;
@@ -46,8 +47,8 @@ body {
 }
 
 .secondnav img {
-  width: 80px; /* Default width */
-  height: auto; /* Maintain aspect ratio */
+  width: 100px; /* Default width */
+  height: 110px; /* Maintain aspect ratio */
 }
 
 .secondnav p {

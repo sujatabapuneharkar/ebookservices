@@ -54,12 +54,9 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 400px;
-  transition: transform 0.3s ease;
 }
 
-.login-container:hover {
-  transform: translateY(-5px);
-}
+
 
 /* Form styling */
 form {
@@ -173,3 +170,58 @@ button:hover {
     max-height: 600px;
   }
 }
+
+/* login.component.css */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+.otp-verification {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px; 
+  padding: 20px;
+  max-width: 400px; 
+  margin: 20px auto; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.otp-verification h3 {
+  margin-bottom: 15px; 
+  font-size: 1.5rem; 
+  color: #333; 
+}
+
+.otp-input {
+  width: calc(100% - 20px); 
+  padding: 10px;
+  font-size: 1rem; 
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  margin-bottom: 15px; 
+}
+
+.otp-input:focus {
+  border-color: #007bff; 
+  outline: none; 
+}
+
+button {
+  background-color: #007bff; 
+  color: #fff;
+  border: none;
+  border-radius: 4px; 
+  padding: 10px 15px; 
+  font-size: 1rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
