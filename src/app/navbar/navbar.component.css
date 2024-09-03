@@ -1,47 +1,154 @@
-/* Navbar styles */
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
 .navbar {
-    width: 100%;
-    background-color: #1e5bb0; 
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    padding:0px ; /* Reduced height */
-    height: 50px;
+  width: 100%;
+  background-color: #1e5bb0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  height: 50px;
+}
 
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.logo img {
+  height: 30px;
+  width: 45px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+/* Second Navigation Styles */
+.secondnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px 20px;
+  gap: 10px; 
+  height: auto; 
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+}
+
+.secondnav img {
+  width: 80px; /* Default width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.secondnav p {
+  font-weight: bolder;
+  color: #1e5bb0;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem); 
+  text-align: center;
+  margin: 0;
+}
+
+/* Last Div */
+.lastdiv {
+  background-color: #1e5bb0;
+  color: #1e5bb0;
+  height: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .navbar {
+    height: 45px;
   }
 
-  .logo img{
-    height: 30px;
-    margin-left: 10px;
+  .logo img {
+    height: 25px;
+    width: 40px;
   }
 
-    .logo-text{
-        font-weight: bold;
-        font-size: 0.9rem;
-        margin-left: 70px;
-        margin-top: -25px ;
-    }
+  .logo-text {
+    font-size: 0.85rem;
+  }
 
-    .secondnav{
-        display: flex;
-        justify-content: space-evenly;
-    }
+  .secondnav p {
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+  }
 
-    .secondnav img{
-        height: 130px;
-    }
+  .secondnav img {
+    width: 70px;
+  }
+}
 
-    .secondnav p{
-        font-weight: bolder;
-        color: #1e5bb0;
-        font-size: 2.6rem;
-        margin-left: 500px;
-        margin-right: 500px;
-    }
+@media (max-width: 768px) {
+  .navbar {
+    height: 40px;
+  }
 
-    .lastdiv{
-        background-color: #1e5bb0;
-        color: #1e5bb0;
-    }
+  .logo img {
+    height: 20px;
+    width: 35px;
+  }
 
-  
+  .logo-text {
+    font-size: 0.8rem;
+  }
+
+  .secondnav {
+    padding: 5px 10px;
+    gap: 5px;
+  }
+
+  .secondnav p {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+  }
+
+  .secondnav img {
+    width: 60px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 5px;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .logo img {
+    height: 20px;
+    width: 30px;
+  }
+
+  .logo-text {
+    font-size: 0.7rem;
+    margin-left: 5px;
+  }
+
+  .secondnav {
+    padding: 5px;
+    gap: 5px;
+  }
+
+  .secondnav p {
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    margin: 5px 0;
+  }
+
+  .secondnav img {
+    width: 50px; 
+  }
+}
