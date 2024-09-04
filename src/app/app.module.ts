@@ -7,13 +7,21 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeComponent } from './employee/employee.component';
+import { ClerkComponent } from './clerk/clerk.component';
+import { HODComponent } from './hod/hod.component';
+import { CEOComponent } from './ceo/ceo.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    ClerkComponent,
+    HODComponent,
+    CEOComponent,
+   
   ],
   imports: [
     BrowserModule,
