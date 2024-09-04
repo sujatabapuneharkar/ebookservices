@@ -24,7 +24,7 @@ body {
 
 .logo img {
   height: 30px;
-  width: 45px;
+  width: auto;
 }
 
 .logo-text {
@@ -40,21 +40,23 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 5px 20px;
-  gap: 10px; 
-  height: auto; 
-  flex-wrap: nowrap; 
-  overflow-x: auto; 
+  gap: 10px;
+  height: auto;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .secondnav img {
-  width: 100px; /* Default width */
-  height: 110px; /* Maintain aspect ratio */
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  transition: all 0.3s ease; /* Smooth transition for resizing */
 }
 
 .secondnav p {
   font-weight: bolder;
   color: #1e5bb0;
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem); 
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   text-align: center;
   margin: 0;
 }
@@ -74,7 +76,7 @@ body {
 
   .logo img {
     height: 25px;
-    width: 40px;
+    width: auto;
   }
 
   .logo-text {
@@ -86,7 +88,7 @@ body {
   }
 
   .secondnav img {
-    width: 70px;
+    max-width: 90px; /* Adjust image size for tablets */
   }
 }
 
@@ -97,7 +99,7 @@ body {
 
   .logo img {
     height: 20px;
-    width: 35px;
+    width: auto;
   }
 
   .logo-text {
@@ -114,7 +116,7 @@ body {
   }
 
   .secondnav img {
-    width: 60px; 
+    max-width: 70px; /* Adjust image size for medium devices */
   }
 }
 
@@ -131,7 +133,7 @@ body {
 
   .logo img {
     height: 20px;
-    width: 30px;
+    width: auto;
   }
 
   .logo-text {
@@ -150,6 +152,6 @@ body {
   }
 
   .secondnav img {
-    width: 50px; 
+    max-width: 50px; /* Adjust image size for small devices */
   }
 }
