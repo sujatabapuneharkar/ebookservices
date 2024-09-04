@@ -20,9 +20,8 @@ export class LoginComponent {
   }
 
   login(username: string, password: string) {
-    // Add authentication logic here
     console.log(`Logged in with username: ${username} and password: ${password}`);
     alert('Login successful!');
-    this.router.navigate(['/employee']); // Navigate to the desired page after successful login
+    this.router.navigate(['/employee']); 
   }
 }
