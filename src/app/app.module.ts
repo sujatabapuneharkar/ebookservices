@@ -10,6 +10,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ClerkComponent } from './clerk/clerk.component';
 import { HODComponent } from './hod/hod.component';
 import { CEOComponent } from './ceo/ceo.component';
+import { EntrybookComponent } from './entrybook/entrybook.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CEOComponent } from './ceo/ceo.component';
     ClerkComponent,
     HODComponent,
     CEOComponent,
+    EntrybookComponent,
    
   ],
   imports: [
