@@ -1,31 +1,190 @@
+
+/* Styling for navigation bar and text */
 .navdiv {
-    background-color: blueviolet;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
+  background-color: blueviolet;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px; /* Adds spacing between elements */
+  flex-wrap: wrap; /* Allows wrapping of items on smaller screens */
 }
 
+/* Navigation link styling */
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .nav-text {
-    color: white;
-    padding: 0 15px;
-    font-weight: bold;
-    font-size: 0.85rem;
+  color: white;
+  padding: 0 15px;
+  font-weight: bold;
+  font-size: 0.85rem;
 }
 
+/* Employee label styling */
 #emp {
-    margin-left: auto;
-    font-weight: bold;
-    color: white;
+  margin-left: auto;
+  font-weight: bold;
+  color: white;
 }
 
+/* Adjustments for tablet screens */
+@media screen and (max-width: 1024px) {
+  .navdiv {
+    padding: 0 15px; /* Adjust padding for smaller screens */
+    gap: 5px; /* Reduces the gap between elements */
+    flex-direction: row; /* Keeps items in a row layout */
+    overflow-x: auto; /* Adds horizontal scrolling if items overflow */
+  }
+
+  .nav-text {
+    font-size: 0.8rem; /* Adjusts font size for better readability */
+    padding: 0 10px; /* Reduces padding for better spacing */
+  }
+
+  #emp {
+    font-size: 0.8rem; /* Slightly reduces font size */
+  }
+}
+
+/* Adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+  .navdiv {
+    flex-direction: column; /* Stacks items vertically on smaller screens */
+    align-items: flex-start; /* Aligns items to the start */
+    height: auto; /* Adjusts height to fit content */
+    padding: 10px; /* Adds padding for better touch targets */
+  }
+
+  .nav-text {
+    font-size: 0.75rem; /* Smaller font size for mobile */
+    padding: 5px 0; /* Reduces padding for smaller spaces */
+  }
+
+  #emp {
+    margin-left: 0; /* Removes left margin to align text */
+    padding-top: 10px; /* Adds spacing above for separation */
+    font-size: 0.75rem; /* Adjusts font size */
+  }
+}
+
+/* Adjustments for very small screens (like older phones) */
+@media screen and (max-width: 480px) {
+  .navdiv {
+    gap: 3px; /* Further reduces gaps between elements */
+    padding: 8px; /* Slightly reduces padding */
+  }
+
+  .nav-text {
+    font-size: 0.7rem; /* Further reduces font size */
+    padding: 3px 0; /* Minimizes padding */
+  }
+
+  #emp {
+    font-size: 0.7rem; /* Smallest font size for tiny screens */
+    padding-top: 5px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select {
+    width: 100%;
+    display: block; /* Ensures inputs stack vertically */
+    margin-bottom: 10px; /* Adds space between vertically aligned inputs */
+  }
+}
+
+/* Heading styling */
 .heading h2 {
-    color: blueviolet;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
+  color: blueviolet;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments for the heading */
+@media screen and (max-width: 768px) {
+  .heading h2 {
+    font-size: 1.5rem; /* Reduces font size for tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading h2 {
+    font-size: 1.25rem; /* Further reduces font size for smaller screens */
+  }
+}
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  color: blueviolet;
+  position: relative;
+}
+h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: aqua;
+  margin: 10px auto 0;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.form-group {
+  width: 48%;
+  margin-bottom: 20px;
+}
+.form-group.full-width {
+  width: 100%;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+input[type="text"], input[type="date"], select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form-group i {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  color: #aaa;
+}
+.form-group.date-group {
+  position: relative;
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #0056b3;
 }

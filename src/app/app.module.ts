@@ -11,6 +11,9 @@ import { ClerkComponent } from './clerk/clerk.component';
 import { HODComponent } from './hod/hod.component';
 import { CEOComponent } from './ceo/ceo.component';
 import { EntrybookComponent } from './entrybook/entrybook.component';
+import { FooterComponent } from './footer/footer.component';
+import { NoteabtractComponent } from './noteabtract/noteabtract.component';
+import { EmpsevapushtikaComponent } from './empsevapushtika/empsevapushtika.component';
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import { EntrybookComponent } from './entrybook/entrybook.component';
     HODComponent,
     CEOComponent,
     EntrybookComponent,
+    FooterComponent,
+    NoteabtractComponent,
+    EmpsevapushtikaComponent,
    
   ],
   imports: [

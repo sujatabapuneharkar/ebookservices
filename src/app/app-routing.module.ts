@@ -7,6 +7,10 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ClerkComponent } from './clerk/clerk.component';
 import { HODComponent } from './hod/hod.component';
 import { CEOComponent } from './ceo/ceo.component';
+import { FooterComponent } from './footer/footer.component';
+import { EmpsevapushtikaComponent } from './empsevapushtika/empsevapushtika.component';
+import { NoteabtractComponent } from './noteabtract/noteabtract.component';
+import { EntrybookComponent } from './entrybook/entrybook.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,6 +19,10 @@ const routes: Routes = [
   { path: 'clerk', component: ClerkComponent },
   { path: 'hod', component: HODComponent },
   { path: 'ceo', component: CEOComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: 'empsevapushtika', component: EmpsevapushtikaComponent },
+  { path: 'noteabstract', component: NoteabtractComponent },
+  { path: 'entrybook', component: EntrybookComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }, 
 ];
 

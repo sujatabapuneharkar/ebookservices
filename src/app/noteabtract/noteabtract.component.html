@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="navdiv">
+    <a href="#"><span class="nav-text">रजेचा अर्ज करा</span></a>
+    <a href="#"><span class="nav-text">नोंदीचा गोषवारा</span></a>
+    <a href="#"><span class="nav-text">सेवा पुस्तिका</span></a>
+    <span id="emp">Hello, Employee</span>
+    <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
+</div>
+
+<body>
+    <div class="container">
+        <h1>नोंदीचा गोषवारा</h1>
+        <div class="underline"></div>
+        <div class="form-group">
+            <div>
+                <!-- Changed FY input from date to number to accept only year -->
+                <label for="fy-year">FY</label>
+                <input type="number" id="fy-year" placeholder="वर्ष" min="1900" max="2099" step="1">
+            </div>
+            <div>
+                <label for="notification-type">नोंदीचा प्रकार :</label>
+                <select id="notification-type">
+                    <option>निवडा</option>
+                    <option>निवडा</option>
+                </select>
+            </div>
+            <div>
+                <label for="start-date">काळीपासून :</label>
+                <input type="date" id="start-date" placeholder="दिनांक">
+            </div>
+            <div>
+                <label for="end-date">काळीपर्यंत :</label>
+                <input type="date" id="end-date" placeholder="दिनांक">
+            </div>
+        </div>
+        <button class="submit-btn">पहा</button>
+    </div>
+</body>

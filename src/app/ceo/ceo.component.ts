@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ceo',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './ceo.component.css'
 })
 export class CEOComponent {
+
+  constructor(private router: Router) {}
+  logout(): void {
+    this.router.navigate(['/login'], { replaceUrl: true });
+  }
 
 }

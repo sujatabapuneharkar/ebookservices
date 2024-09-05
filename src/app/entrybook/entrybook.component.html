@@ -5,7 +5,74 @@
     <a href="#"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
     <a href="#"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
     <span id="emp">Hello, Clerk</span>
+    <!-- Logout link added -->
+    <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
 </div>
-<span class="heading">
-    <h2>सेवा पुस्तिका यादी</h2>
-</span>
+
+<body>
+    <div class="container">
+        <h1>नोंद</h1>
+        <form>
+            <div class="form-group">
+                <label for="type">नोंदीचा प्रकार</label>
+                <select id="type">
+                    <option>वार्षिक वेतनवाढ</option>
+                </select>
+            </div>
+            <div class="form-group date-group">
+                <label for="date">दिनांक</label>
+                <input type="date" id="date" value="2021-07-01">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="form-group">
+                <label for="position">नियुक्ती पदनाम व वेतनश्रेणी</label>
+                <input type="text" id="position" value="कार्यकारी अभियंता">
+            </div>
+            <div class="form-group">
+                <label for="status">नियुक्ती स्थिती</label>
+                <input type="text" id="status" value="रजा">
+            </div>
+            <div class="form-group">
+                <label for="rank">रिक्त पदाचे स्वरूप</label>
+                <input type="text" id="rank" value=".">
+            </div>
+            <div class="form-group">
+                <label for="salary">कायम नियुक्तीमधील वेतन</label>
+                <input type="text" id="salary" value="5200-20200 ग्रेड पे - 1900">
+            </div>
+            <div class="form-group">
+                <label for="promotion-salary">स्थानांतर नियुक्तीबाबत जादा वेतन</label>
+                <input type="text" id="promotion-salary" value="7640 + 1900">
+            </div>
+            <div class="form-group">
+                <label for="other-allowance">इतर भत्तेव</label>
+                <input type="text" id="other-allowance" value="9540">
+            </div>
+            <div class="form-group date-group">
+                <label for="appointment-date">नियुक्ती दिनांक</label>
+                <input type="date" id="appointment-date" value="2021-07-01">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="form-group date-group">
+                <label for="completion-date">नियुक्तीची मुदत संपण्याचा दिनांक</label>
+                <input type="text" id="completion-date" placeholder="DD/MM/YYYY">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="form-group">
+                <label for="reason">नियुक्तीची संपन्नतेचे कारण</label>
+                <input type="text" id="reason" value=".">
+            </div>
+            <div class="form-group">
+                <label for="remarks">घेतलेल्या रजेचे स्वरूप, कालावधी ई.</label>
+                <input type="text" id="remarks" value=".">
+            </div>
+            <div class="form-group full-width">
+                <label for="additional-info">झालेली शिक्षा/ठेवलेले ठप्पा/मिळालेले बक्षीस/प्रशासकीय कामगिरी/रजा प्रवास सवलत ई.</label>
+                <input type="text" id="additional-info" value=".">
+            </div>
+            <div class="form-group full-width">
+                <button type="submit">नोंद करा</button>
+            </div>
+        </form>
+    </div>
+</body>
