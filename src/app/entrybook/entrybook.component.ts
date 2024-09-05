@@ -10,7 +10,7 @@ export class EntrybookComponent {
 
   constructor(private router: Router) {}
   logout(): void {
-    this.router.navigate(['/login'], { replaceUrl: true });
+    this.router.navigate(['/login']);
   }
 
 }

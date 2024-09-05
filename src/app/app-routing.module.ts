@@ -13,6 +13,7 @@ import { NoteabtractComponent } from './noteabtract/noteabtract.component';
 import { EntrybookComponent } from './entrybook/entrybook.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'employee', component: EmployeeComponent },
@@ -22,8 +23,7 @@ const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: 'empsevapushtika', component: EmpsevapushtikaComponent },
   { path: 'noteabstract', component: NoteabtractComponent },
-  { path: 'entrybook', component: EntrybookComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
+  { path: 'entrybook', component: EntrybookComponent }, 
 ];
 
 @NgModule({
