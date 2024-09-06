@@ -8,8 +8,43 @@
     <span id="emp">Hello, HOD</span>
     <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
 </div>
-<span class="heading">
-    <h2>रजेचा गोषवारा</h2>
-</span>
-
-<app-footer></app-footer>
+<body>
+    <div class="container">
+        <div class="stats">
+            <div class="stat-box blue">
+                <h3>संपूर्ण रजा</h3>
+                <div class="number">90</div>
+            </div>
+            <div class="stat-box green">
+                <h3>मंजूर रजा</h3>
+                <div class="number">50</div>
+            </div>
+            <div class="stat-box orange">
+                <h3>रद्द रजा</h3>
+                <div class="number">30</div>
+            </div>
+            <div class="stat-box red">
+                <h3>प्रलंबित रजा</h3>
+                <div class="number">10</div>
+            </div>
+        </div>
+        <div class="form-container">
+            <h2>रजेचा गोषवारा</h2>
+            <div class="form-group">
+                <label for="from-date">कधीपासून</label>
+                <input type="text" id="from-date" placeholder="dd-mm-yyyy">
+                <label for="to-date">कधीपर्यंत</label>
+                <input type="text" id="to-date" placeholder="dd-mm-yyyy">
+                <label for="leave-type">रजेचा प्रकार </label>
+                <select id="leave-type">
+                    <option>निवडा</option>
+                </select>
+                <label for="business">कर्मचारी </label>
+                <select id="business">
+                    <option>निवडा</option>
+                </select>
+                <button>पाठवा</button>
+            </div>
+        </div>
+    </div>
+</body>

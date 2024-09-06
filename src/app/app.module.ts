@@ -14,6 +14,7 @@ import { EntrybookComponent } from './entrybook/entrybook.component';
 import { FooterComponent } from './footer/footer.component';
 import { NoteabtractComponent } from './noteabtract/noteabtract.component';
 import { EmpsevapushtikaComponent } from './empsevapushtika/empsevapushtika.component';
+import Swal from 'sweetalert2';
 
 
 @NgModule({
