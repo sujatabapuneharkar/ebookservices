@@ -6,17 +6,23 @@
     <span id="emp">Hello, Employee</span>
     <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
 </div>
-
 <body>
-    <div class="container">
-        <div class="header"><h1>सेवा पुस्तिका</h1></div>
-        <div class="underline"></div>
-        <div class="navigation">
+        <div class="container">
+            <div class="header">
+                <h1>सेवा पुस्तिका</h1>  
+                <div class="icon-container">
+                    <button class="print"><i class="fa-solid fa-print"></i></button>
+                    <button class="excel"><i class="fa-solid fa-file-excel"></i></button>
+                    <button class="pdf"><i class="fa-solid fa-file-pdf"></i></button>
+                </div>
+            </div>
+         <div class="underline"></div>
+         <div class="navigation">
             <i class="fas fa-arrow-left"></i>
             <div class="page-number">पृष्ठ क्र. - 1/30</div>
             <i class="fas fa-arrow-right"></i>
         </div>
-        <div class="dotted-line"></div>
+        <form>
         <div class="section">
             <label>पूर्ण नाव : </label>
             <label>पद : </label>
@@ -80,7 +86,7 @@
             <label>( दोन ) प्रमाणपत्र देणारा अधिकारी व त्याचे पदनाम -</label>
             <input type="text">
         </div>
-        <div class="dotted-line"></div>
+    </form>
         <div class="footer">
             <div class="navigation">
                 <i class="fas fa-arrow-left"></i>
@@ -88,5 +94,6 @@
                 <i class="fas fa-arrow-right"></i>
             </div>
         </div>
+    
     </div>
 </body>

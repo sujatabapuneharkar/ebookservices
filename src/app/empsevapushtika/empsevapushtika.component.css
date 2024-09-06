@@ -38,10 +38,24 @@ body {
 }
 
 .container {
+    position: relative; /* Add this */
     width: 60%; /* Compressed the container size */
     margin: 0 auto;
-    padding: 10px; /* Reduced padding for a more compact look */
+    padding: 20px; /* Reduced padding for a more compact look */
     /* Border removed */
+}
+
+.icon-container {
+    position: absolute; /* Add this */
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    padding: 10px; /* Adjust as needed */
+}
+
+.icon-container i {
+    font-size: 24px;
+    color: #4a148c;
+    margin-left: 22px; /* Space between icons */
 }
 
 h1 {
@@ -49,6 +63,7 @@ h1 {
     font-size: 24px;
     margin-bottom: 5px;
 }
+
 .underline {
     width: 100px;
     height: 2px;
@@ -69,6 +84,14 @@ h1 {
     color: #000;
     font-size: 14px;
     margin-bottom: 20px;
+}
+
+form {
+    border: 1px solid #0b0a0a; /* Light gray border */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 px 20px black; /* Shadow effect */
+    padding: 20px; /* Adjust padding if needed */
+    background-color: #ffffff; /* Ensure background color */
 }
 
 .section {
@@ -112,4 +135,34 @@ h1 {
     color: #000;
 }
 
+.icon-container {
+    position: absolute; /* Align the container to the top right */
+    top: 0;
+    right: 0;
+    padding: 10px; /* Adjust padding as needed */
+}
 
+.icon-container button {
+    background-color: #f0f0f0; /* Light background for buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Add padding inside the button */
+    margin-left: 10px; /* Space between buttons */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background color and shadow */
+}
+
+.icon-container button:hover {
+    background-color: #e0e0e0; /* Darker background on hover */
+}
+
+.icon-container button:active {
+    background-color: #d0d0d0; /* Even darker background when button is pressed */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Inset shadow to show button press */
+}
+
+.icon-container i {
+    font-size: 20px; /* Size of the icons */
+    color: black; /* Icon color */
+    margin-right: 20px;
+}

@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NoteabtractComponent } from './noteabtract/noteabtract.component';
 import { EmpsevapushtikaComponent } from './empsevapushtika/empsevapushtika.component';
 import Swal from 'sweetalert2';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import Swal from 'sweetalert2';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
