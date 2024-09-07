@@ -130,12 +130,12 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
-h1 {
+h2 {
   text-align: center;
   color: blueviolet;
   position: relative;
 }
-h1::after {
+h2::after {
   content: '';
   display: block;
   width: 50px;
@@ -143,10 +143,27 @@ h1::after {
   background-color: aqua;
   margin: 10px auto 0;
 }
+/* Other existing styles... */
+
 form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border: 1px solid #ddd; /* Light border for the form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Subtle shadow for a lifted effect */
+  padding: 20px; /* Padding inside the form */
+  background-color: #fff; /* Background color to ensure the form stands out */
+  
+}
+
+/* Other existing styles... */
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
 }
 .form-group {
   width: 48%;
@@ -154,11 +171,12 @@ form {
 }
 .form-group.full-width {
   width: 100%;
+  text-align: center;
 }
 label {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold;
+  
 }
 input[type="text"], input[type="date"], select {
   width: 100%;
@@ -184,6 +202,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+
 }
 button:hover {
   background-color: #0056b3;

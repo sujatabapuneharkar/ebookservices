@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { EmpsevapushtikaComponent } from './empsevapushtika/empsevapushtika.component';
 import { NoteabtractComponent } from './noteabtract/noteabtract.component';
 import { EntrybookComponent } from './entrybook/entrybook.component';
+import { EmpentrybookComponent } from './empentrybook/empentrybook.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'empsevapushtika', component: EmpsevapushtikaComponent },
   { path: 'noteabstract', component: NoteabtractComponent },
   { path: 'entrybook', component: EntrybookComponent }, 
+  { path: 'empentrybook', component: EmpentrybookComponent }, 
 ];
 
 @NgModule({

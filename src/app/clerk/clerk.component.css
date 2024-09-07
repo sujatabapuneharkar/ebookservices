@@ -62,6 +62,12 @@ a {
 .leave-form {
     max-width: 600px;
     margin: 0 auto;
+    
+    border: 1px solid #ddd; /* Light border around the form */
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for a lifted effect */
+    padding: 20px; /* Padding inside the form */
+    background-color: #fff; /* Background color to ensure the form stands out */
 }
 
 .form-group {
@@ -122,7 +128,7 @@ button:hover {
 .table-container {
     position: relative;
     width: 90%;
-    margin: 20px auto; /* Adds spacing around the table container */
+    margin: 60px auto; /* Adds spacing around the table container */
 }
 
 .icon-container {

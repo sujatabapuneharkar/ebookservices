@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+<div class="navdiv">
+    <a href="#"><span class="nav-text">सेवा पुस्तिका यादी</span></a>
+    <a href="#"><span class="nav-text">कर्मचारी तयार करा</span></a>
+    <a href="#"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
+    <a href="#"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
+    <span id="emp">Hello, Clerk</span>
+    <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
+</div>
+<span class="container">
+    <h2>नोंद (शेहबाज खान)</h2>
+</span>
+<div class="form-group">
+    <label for="fy-year">FY वर्ष :</label>
+    <input type="number" id="fy-year" placeholder="दिनांक">
+    <label for="type">नोंदीचा प्रकार :</label>
+    <input type="text" id="type" placeholder="निवडा">
+    <label for="date">दिनांक :</label>
+    <input type="date" id="date" placeholder="DD/MM/YYYY">
+    <button class="btn">पहा</button>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>अ. क्र.</th>
+                <th>FY वर्ष</th>
+                <th>नोदिवा प्रकार</th>
+                <th>दिनांक</th>
+                <th>स्त्य स्थिती</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2019-20</td>
+                <td>वार्षिक लेखापरीक्षण</td>
+                <td>01/09/2019</td>
+                <td><span class="status-signed">Signed</span></td>
+                <td><button class="btn" (click)="openPopup()">More Details</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2020-21</td>
+                <td>रजा</td>
+                <td>02-08-2024</td>
+                <td><span class="status-pending">Pending</span></td>
+                <td><button class="btn" (click)="openPopup()">More Details</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>2021-22</td>
+                <td>जीवन विमा</td>
+                <td>03-08-2024</td>
+                <td><span class="status-signed">Signed</span></td>
+                <td><button class="btn" (click)="openPopup()">More Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Popup Container -->
+<div class="popup" *ngIf="isPopupOpen">
+    <div class="popup-content">
+        <span class="close" (click)="closePopup()">&times;</span>
+        <h1>वार्षिक वेतनवाढ - 01/09/2019</h1>
+        <hr>
+        <label for="position">नियुक्ती पदनाम व वेतनश्रेणी</label>
+        <input type="text" id="position" >
+        
+        <label for="status">नियुक्ती स्थिती</label>
+        <input type="text" id="status">
+        
+        <label for="permanent-salary">कायम नियुक्तीमधील वेतन</label>
+        <input type="text" id="permanent-salary" >
+        
+        <label for="promotion-salary">स्थानापन्न नियुक्तीबद्दल जादा वेतन</label>
+        <input type="text" id="promotion-salary" >
+        
+        <label for="other-allowances">इतर भत्तालब्धी</label>
+        <input type="text" id="other-allowances" >
+        
+        <label for="appointment-date">नियुक्ती दिनांक</label>
+        <div class="date-container">
+            <input type="date" id="appointment-date" >
+        </div>
+        <button>अपडेट</button>
+    </div>
+</div>
