@@ -19,6 +19,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmpentrybookComponent } from './empentrybook/empentrybook.component';
 import { ClerkshowsevapushtikaComponent } from './clerkshowsevapushtika/clerkshowsevapushtika.component';
 import { CreateSevapushtikaComponent } from './create-sevapushtika/create-sevapushtika.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { CreateSevapushtikaComponent } from './create-sevapushtika/create-sevapu
     EmpentrybookComponent,
     ClerkshowsevapushtikaComponent,
     CreateSevapushtikaComponent,
+    CreateEmployeeComponent,
    
   ],
   imports: [

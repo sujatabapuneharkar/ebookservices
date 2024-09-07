@@ -65,7 +65,7 @@ a {
     
     border: 1px solid #ddd; /* Light border around the form */
     border-radius: 8px; /* Rounded corners for the form */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for a lifted effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifted effect */
     padding: 20px; /* Padding inside the form */
     background-color: #fff; /* Background color to ensure the form stands out */
 }
@@ -75,6 +75,7 @@ a {
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
+    height: 50px;
 }
 
 .date-group {
@@ -106,10 +107,13 @@ select {
     font-size: 1rem;
 }
 
-.button-center {
+.button-center button:active{
+    transform: scale(0.95);
     display: flex;
     justify-content: center;
 }
+
+
 
 button {
     padding: 10px 20px;
@@ -119,6 +123,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-left: 250px;
 }
 
 button:hover {
