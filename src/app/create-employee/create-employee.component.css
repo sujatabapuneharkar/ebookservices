@@ -123,7 +123,7 @@ select {
 /* Table container for basic layout adjustments */
 /* Table styling */
 table {
-    width: 80%; /* Adjust width as needed */
+    width: 90%; /* Adjust width as needed */
     border-collapse: collapse;
     margin: 50px auto; /* Center the table horizontally */
     font-size: 16px;
@@ -133,6 +133,7 @@ table {
 /* Table headers styling */
 th {
     padding: 12px; /* Padding inside headers */
+    background-color: #f2f2f2;
     border: 1px solid #ddd; /* Light border */
 }
 
@@ -164,7 +165,7 @@ button {
 
 /* Button hover and active effects */
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: darkgray; /* Darker blue on hover */
 }
 
 button:active {

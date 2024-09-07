@@ -20,6 +20,7 @@ import { EmpentrybookComponent } from './empentrybook/empentrybook.component';
 import { ClerkshowsevapushtikaComponent } from './clerkshowsevapushtika/clerkshowsevapushtika.component';
 import { CreateSevapushtikaComponent } from './create-sevapushtika/create-sevapushtika.component';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { UploadSevapushtikaComponent } from './upload-sevapushtika/upload-sevapushtika.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
     ClerkshowsevapushtikaComponent,
     CreateSevapushtikaComponent,
     CreateEmployeeComponent,
+    UploadSevapushtikaComponent,
    
   ],
   imports: [

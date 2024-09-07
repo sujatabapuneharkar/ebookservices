@@ -1,0 +1,187 @@
+.navdiv {
+    background-color: blueviolet;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-text {
+    color: white;
+    padding: 0 15px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+#emp {
+    margin-left: auto;
+    font-weight: bold;
+    color: white;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 900px;
+    margin: 30px auto; /* Centers the container */
+   
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    color: #4a148c;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: aqua;
+    margin: 5px auto 0;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for better responsiveness */
+    gap: 20px; /* Adds space between the items */
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group .input-wrapper {
+    position: relative;
+    flex: 2;
+}
+
+.form-group input,
+.form-group select {
+    width: 320px; /* Ensures the inputs take full width of their flex container */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="file"] {
+    padding: 3px;
+}
+
+.form-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+}
+
+.upload-btn {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1e88e5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 300px;
+}
+
+.upload-btn:hover {
+    background-color: #1565c0;
+}
+button:active{
+    transform: scale(0.95);
+}
+
+/* Existing styles above remain unchanged */
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto; /* Center the table horizontally */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-buttons .btn {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background-color: #ff4d4d;
+}
+
+.btn-edit {
+    background-color: #4da6ff;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+tr:hover {
+    background-color: #f2f2f2; /* Light gray background on hover */
+}
+
+.delete {
+    background-color: orangered;
+}
+
+/* Action button styling */
+button {
+    background-color: #007bff; /* Blue background for buttons */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    padding: 5px 10px; /* Button padding */
+    margin: 0 2px; /* Spacing between buttons */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth hover transition */
+}
+
+/* Button hover and active effects */
+button:hover {
+    background-color: darkgray; /* Darker blue on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly reduce size on click */
+}
