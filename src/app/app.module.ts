@@ -17,6 +17,8 @@ import { EmpsevapushtikaComponent } from './empsevapushtika/empsevapushtika.comp
 import Swal from 'sweetalert2';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmpentrybookComponent } from './empentrybook/empentrybook.component';
+import { ClerkshowsevapushtikaComponent } from './clerkshowsevapushtika/clerkshowsevapushtika.component';
+import { CreateSevapushtikaComponent } from './create-sevapushtika/create-sevapushtika.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { EmpentrybookComponent } from './empentrybook/empentrybook.component';
     NoteabtractComponent,
     EmpsevapushtikaComponent,
     EmpentrybookComponent,
+    ClerkshowsevapushtikaComponent,
+    CreateSevapushtikaComponent,
    
   ],
   imports: [
