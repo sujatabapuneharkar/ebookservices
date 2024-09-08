@@ -6,69 +6,67 @@
     <a href="#"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
     <span id="emp">Hello, Clerk</span>
     <!-- Logout link added -->
-    <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
+    <a href="#" id="logout" class="nav-text" (click)="logout()">Logout</a>
 </div>
 
 <body>
     <div class="container">
         <h2>नोंद</h2>
-        <form>
+        <form (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="type">नोंदीचा प्रकार</label>
-                <select id="type">
+                <label for="entrytype">नोंदीचा प्रकार</label>
+                <select id="entrytype" [(ngModel)]="entryBook.entrytype" name="entrytype" required>
                     <option></option>
                     <option>वार्षिक वेतनवाढ</option>
                 </select>
             </div>
             <div class="form-group date-group">
                 <label for="date">दिनांक</label>
-                <input type="date" id="date">
+                <input type="date" id="date" [(ngModel)]="entryBook.date" name="date" required>
             </div>
             <div class="form-group">
-                <label for="position">नियुक्ती पदनाम व वेतनश्रेणी</label>
-                <input type="text" id="position" >
+                <label for="appointandsalary">नियुक्ती पदनाम व वेतनश्रेणी</label>
+                <input type="text" id="appointandsalary" [(ngModel)]="entryBook.appointandsalary" name="appointandsalary" required>
             </div>
             <div class="form-group">
-                <label for="status">नियुक्ती स्थिती</label>
-                <input type="text" id="status" >
+                <label for="positionofappoint">नियुक्ती स्थिती</label>
+                <input type="text" id="positionofappoint" [(ngModel)]="entryBook.positionofappoint" name="positionofappoint" required>
             </div>
             <div class="form-group">
-                <label for="rank">रिक्त पदाचे स्वरूप</label>
-                <input type="text" id="rank" >
+                <label for="natureofvacancy">रिक्त पदाचे स्वरूप</label>
+                <input type="text" id="natureofvacancy" [(ngModel)]="entryBook.natureofvacancy" name="natureofvacancy" required>
             </div>
             <div class="form-group">
-                <label for="salary">कायम नियुक्तीमधील वेतन</label>
-                <input type="text" id="salary" >
+                <label for="salaryinperappoint">कायम नियुक्तीमधील वेतन</label>
+                <input type="text" id="salaryinperappoint" [(ngModel)]="entryBook.salaryinperappoint" name="salaryinperappoint" required>
             </div>
             <div class="form-group">
-                <label for="promotion-salary">स्थानांतर नियुक्तीबाबत जादा वेतन</label>
-                <input type="text" id="promotion-salary" >
+                <label for="addpayontransferappoint">स्थानांतर नियुक्तीबाबत जादा वेतन</label>
+                <input type="text" id="addpayontransferappoint" [(ngModel)]="entryBook.addpayontransferappoint" name="addpayontransferappoint" required>
             </div>
             <div class="form-group">
-                <label for="other-allowance">इतर भत्तेव</label>
-                <input type="text" id="other-allowance">
+                <label for="otherallowances">इतर भत्तेव</label>
+                <input type="text" id="otherallowances" [(ngModel)]="entryBook.otherallowances" name="otherallowances">
             </div>
             <div class="form-group date-group">
-                <label for="appointment-date">नियुक्ती दिनांक</label>
-                <input type="date" id="appointment-date" >
-                
+                <label for="dateofappoint">नियुक्ती दिनांक</label>
+                <input type="date" id="dateofappoint" [(ngModel)]="entryBook.dateofappoint" name="dateofappoint">
             </div>
             <div class="form-group date-group">
-                <label for="completion-date">नियुक्तीची मुदत संपण्याचा दिनांक</label>
-                <input type="date" id="completion-date">
-              
+                <label for="dateofexpireappoint">नियुक्तीची मुदत संपण्याचा दिनांक</label>
+                <input type="date" id="dateofexpireappoint" [(ngModel)]="entryBook.dateofexpireappoint" name="dateofexpireappoint">
             </div>
             <div class="form-group">
-                <label for="reason">नियुक्तीची संपन्नतेचे कारण</label>
-                <input type="text" id="reason" >
+                <label for="affordreasonforappoint">नियुक्तीची संपन्नतेचे कारण</label>
+                <input type="text" id="affordreasonforappoint" [(ngModel)]="entryBook.affordreasonforappoint" name="affordreasonforappoint">
             </div>
             <div class="form-group">
-                <label for="remarks">घेतलेल्या रजेचे स्वरूप, कालावधी ई.</label>
-                <input type="text" id="remarks">
+                <label for="natureofleaveduration">घेतलेल्या रजेचे स्वरूप, कालावधी ई.</label>
+                <input type="text" id="natureofleaveduration" [(ngModel)]="entryBook.natureofleaveduration" name="natureofleaveduration">
             </div>
             <div class="form-group full-width">
-                <label for="additional-info">झालेली शिक्षा / ठेवलेले ठप्पा / मिळालेले बक्षीस / प्रशासकीय कामगिरी / रजा प्रवास सवलत ई.</label>
-                <input type="text" id="additional-info">
+                <label for="punishmentetc">झालेली शिक्षा / ठेवलेले ठप्पा / मिळालेले बक्षीस / प्रशासकीय कामगिरी / रजा प्रवास सवलत ई.</label>
+                <input type="text" id="punishmentetc" [(ngModel)]="entryBook.punishmentetc" name="punishmentetc">
             </div>
             <div class="form-group full-width">
                 <button type="submit">नोंद करा</button>
