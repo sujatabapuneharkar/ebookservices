@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,14 +15,22 @@ export class LoginComponent {
 
   onSubmit(form: NgForm) {
     if (form.valid) {
-      this.login(form.value.username, form.value.password);
+      // Get loginInput instead of username since the input field name is changed to loginInput
+      const { loginInput, password } = form.value; 
+      this.login(loginInput, password);
     } else {
       console.log('Form is invalid');
     }
   }
 
-  login(username: string, password: string) {
-    this.http.post<any>('http://localhost:8080/api/admins/login', { mobileno: username, password: password })
+  login(identifier: string, password: string) {
+    // Determine if the identifier is a mobile number or a username
+    const isMobileNumber = /^\d{10}$/.test(identifier); // Check for 10-digit mobile number format
+    const loginData = isMobileNumber 
+      ? { mobileno: identifier, password } 
+      : { username: identifier, password };
+
+    this.http.post<any>('http://localhost:8080/api/admins/login', loginData)
       .subscribe(response => {
         if (response && response.appoint) {
           Swal.fire({
@@ -33,24 +40,7 @@ export class LoginComponent {
             confirmButtonText: 'OK'
           }).then(() => {
             // Navigate based on appoint type
-            switch (response.appoint.toLowerCase()) {
-              case 'clerk':
-                this.router.navigate(['/clerk']);
-                break;
-              case 'employee':
-                this.router.navigate(['/employee']);
-                break;
-              case 'hod':
-                this.router.navigate(['/hod']);
-                break;
-              case 'ceo':
-                this.router.navigate(['/ceo']);
-                break;
-              // Add more cases as needed for different roles
-              default:
-                this.router.navigate(['/login']); // Default fallback
-                break;
-            }
+            this.navigateByAppoint(response.appoint);
           });
         } else {
           Swal.fire({
@@ -69,5 +59,22 @@ export class LoginComponent {
           confirmButtonText: 'OK'
         });
       });
+  }
+
+  navigateByAppoint(appoint: string) {
+    switch (appoint.toLowerCase()) {
+      case 'clerk':
+        this.router.navigate(['/clerk']);
+        break;
+      case 'hod':
+        this.router.navigate(['/hod']);
+        break;
+      case 'ceo':
+        this.router.navigate(['/ceo']);
+        break;
+      default:
+        this.router.navigate(['/employee']); // Redirect all other roles as employees
+        break;
+    }
   }
 }

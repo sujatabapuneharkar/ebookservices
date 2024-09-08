@@ -10,17 +10,43 @@
         <h2>लॉगीन</h2>
         <hr class="hr-divider">
         <div class="form-group">
-          <label for="username" class="visually-hidden">Username</label>
-          <input type="text" id="username" name="username" placeholder="युजरनेम" required 
-                 pattern="^[0-9]{10}$" ngModel>
-          <div *ngIf="loginForm.controls['username']?.invalid && loginForm.controls['username']?.touched">
-            <small class="error-message">वैध 10 अंकी मोबाइल नंबर प्रविष्ट करा</small>
+          <label for="loginInput" class="visually-hidden">Username or Mobile</label>
+          <input
+            type="text"
+            id="loginInput"
+            name="loginInput"
+            placeholder="युजरनेम किंवा मोबाइल नंबर"
+            required
+            pattern="^([0-9]{10}|[a-zA-Z0-9._%+-]+)$"
+            ngModel
+          />
+          <div
+            *ngIf="
+              loginForm.controls['loginInput']?.invalid &&
+              loginForm.controls['loginInput']?.touched
+            "
+          >
+            <small class="error-message">
+              वैध 10 अंकी मोबाइल नंबर किंवा युजरनेम प्रविष्ट करा
+            </small>
           </div>
         </div>
         <div class="form-group">
           <label for="password" class="visually-hidden">Password</label>
-          <input type="password" id="password" name="password" placeholder="पासवर्ड" required ngModel>
-          <div *ngIf="loginForm.controls['password']?.invalid && loginForm.controls['password']?.touched">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="पासवर्ड"
+            required
+            ngModel
+          />
+          <div
+            *ngIf="
+              loginForm.controls['password']?.invalid &&
+              loginForm.controls['password']?.touched
+            "
+          >
             <small class="error-message">तुमचा पासवर्ड टाका</small>
           </div>
         </div>
@@ -29,4 +55,3 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>

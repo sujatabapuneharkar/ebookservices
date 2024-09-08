@@ -4,37 +4,44 @@
   <a href="create-employee"><span class="nav-text">कर्मचारी तयार करा</span></a>
   <a href="create-sevapushtika"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
   <a href="upload-sevapushtika"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
-    <span id="emp">Hello, Clerk</span>
-    <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
+  <span id="emp">Hello, Clerk</span>
+  <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
 </div>
 <div class="cantainer">
-    <h2>कर्मचारी तयार करा</h2>
-    <div class="underline"></div>
-<br>
-    <div class="form-grid">
-        <label for="fullName">पूर्ण नाव:</label>
-        <input type="text" id="fullName" name="fullName">
-
-        <label for="position">पद:</label>
-        <input type="text" id="position" name="position">
-
-        <label for="remainingLeave">उर्वरित रजा:</label>
-        <input type="text" id="remainingLeave" name="remainingLeave">
-
-        <label for="serviceId">सेवार्थ आयडी:</label>
-        <input type="text" id="serviceId" name="serviceId">
-
-        <label for="office">कार्यालय:</label>
-        <select id="office" name="office">
-            <option value="">निवडा</option>
-        </select>
-        <br>
-        <button type="submit" class="submit-btn">तयार करा</button>
+  <h2>कर्मचारी तयार करा</h2>
+  <div class="underline"></div>
+  <br>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" [(ngModel)]="employee.fullname" name="fullname" required>
     </div>
-</div>
+    <div>
+      <label for="appoint">Appoint:</label>
+      <input type="text" id="appoint" [(ngModel)]="employee.appoint" name="appoint">
+    </div>
+    <div>
+      <label for="remainingleaves">Remaining Leaves:</label>
+      <input type="number" id="remainingleaves" [(ngModel)]="employee.remainingleaves" name="remainingleaves">
+    </div>
+    <div>
+      <label for="empuniqueid">Employee Unique ID:</label>
+      <input type="text" id="empuniqueid" [(ngModel)]="employee.empuniqueid" name="empuniqueid" required>
+    </div>
+    <div>
+      <label for="mobileno">Mobile No:</label>
+      <input type="text" id="mobileno" [(ngModel)]="employee.mobileno" name="mobileno" required>
+    </div>
+    <div>
+      <label for="office">Office:</label>
+      <input type="text" id="office" [(ngModel)]="employee.office" name="office">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  
 
-
-    <table>
+  <table>
+    <thead>
       <tr>
         <th>अनु.क्र.</th>
         <th>पूर्ण नाव</th>
@@ -44,36 +51,19 @@
         <th>#उर्वरित रजा</th>
         <th>Action</th>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>मनिदिप गोणेवार</td>
-        <td>ABCDEFG0000</td>
-        <td>क्लर्क</td>
-        <td>पचायत समिति किनवट</td>
-        <td>200</td>
-        <td><button class="delete"><i class="fa-solid fa-trash-can"></i></button>
-            <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button></td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ emp.fullname }}</td>
+        <td>{{ emp.empuniqueid }}</td>
+        <td>{{ emp.appoint }}</td>
+        <td>{{ emp.office }}</td>
+        <td>{{ emp.remainingleaves }}</td>
+        <td>
+          <button class="delete"><i class="fa-solid fa-trash-can"></i></button>
+          <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+        </td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td>अयान मिर्जा</td>
-        <td>ABCDEFG1234</td>
-        <td>टीचर</td>
-        <td>ज़िल्हा परिषद किनवट</td>
-        <td>100</td>
-        <td><button class="delete"><i class="fa-solid fa-trash-can"></i></button>
-            <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>यश गोटे</td>
-        <td>ABCDEFG3456</td>
-        <td>टीचर</td>
-        <td>ज़िल्हा परिषद किनवट</td>
-        <td>300</td>
-        <td><button class="delete"><i class="fa-solid fa-trash-can"></i></button>
-            <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button></td>
-      </tr>
-    </table>
-    
-    
+    </tbody>
+  </table>
