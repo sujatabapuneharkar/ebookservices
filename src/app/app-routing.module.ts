@@ -15,6 +15,7 @@ import { ClerkshowsevapushtikaComponent } from './clerkshowsevapushtika/clerksho
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { CreateSevapushtikaComponent } from './create-sevapushtika/create-sevapushtika.component';
 import { UploadSevapushtikaComponent } from './upload-sevapushtika/upload-sevapushtika.component';
+import { SevapushtikaEmpnameComponent } from './sevapushtika-empname/sevapushtika-empname.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'create-employee', component: CreateEmployeeComponent },
   { path: 'create-sevapushtika', component: CreateSevapushtikaComponent },
   { path: 'upload-sevapushtika', component: UploadSevapushtikaComponent },
+  { path: 'sevapushtika-empname', component: SevapushtikaEmpnameComponent },
 ];
 
 @NgModule({
