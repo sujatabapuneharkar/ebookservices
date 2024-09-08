@@ -1,0 +1,151 @@
+.navdiv {
+    background-color: blueviolet;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-text {
+    color: white;
+    padding: 0 15px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+#emp {
+    margin-left: auto;
+    font-weight: bold;
+    color: white;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 20px auto; /* Centers the container */
+}
+
+.container h2 {
+    text-align: center;
+    color: blueviolet;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.container h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: aqua;
+    margin: 10px auto 0;
+}
+
+.underline {
+    width: 100px;
+    height: 2px;
+    background-color: #00c4cc;
+    margin: 0 auto 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    font-size: 24px;
+    color: purple;
+    margin: 20px 610px;
+    align-items: center;
+}
+.sub-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin: 20px 700px;
+}
+
+.select-column{
+    margin-left: 500px;
+}
+.table-container {
+    overflow-x: auto;
+    padding: 10px; /* Add padding around the table for better appearance */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: auto; /* Allows columns to adjust based on content */
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 10px; /* Standard padding for cells */
+    font-size: 1rem; /* Font size for table content */
+    text-align: left; /* Align text to the left for better readability */
+    vertical-align: middle; /* Center content vertically */
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left; /* Center-align headers */
+    font-size: 0.9rem; /* Adjust font size for headers */
+    padding: 20px; /* Standard padding for headers */
+    white-space: nowrap; /* Prevents header text from wrapping */
+}
+
+tr {
+    height: auto; /* Allows rows to adjust based on content */
+}
+
+td {
+    word-wrap: break-word; /* Ensure long text wraps inside cells */
+    white-space: nowrap; /* Prevents content from wrapping */
+}
+
+/* Optional: Set minimum and maximum widths for columns to handle extreme cases */
+th:nth-child(1),
+td:nth-child(1) {
+    min-width: 150px; /* Minimum width for the first column */
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    min-width: 180px; /* Minimum width for the second column */
+}
+
+.signature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signature img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.footer {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.select-column {
+    margin: 20px 0;
+}
+
+.select-column input {
+    width: 40px;
+    text-align: center;
+    margin: 0 5px; /* Add spacing between the inputs */
+}
