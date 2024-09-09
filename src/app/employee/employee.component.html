@@ -3,18 +3,30 @@
     <a href="employee"><span class="nav-text">रजेचा अर्ज करा</span></a>
     <a href="noteabstract"><span class="nav-text">नोंदीचा गोषवारा</span></a>
     <a href="empsevapushtika"><span class="nav-text">सेवा पुस्तिका</span></a>
-    <span id="emp">Hello, Employee</span>
-    <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
+    <span id="emp">Hello, {{ fullname }}</span>
+    <a href="#" id="logout" class="nav-text" (click)="logout()">Logout</a>
 </div>
+
 <span class="container">
     <h2>रजेचा अर्ज करा</h2>
 </span>
 
-<form class="leave-form">
+<form class="leave-form" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <label for="dropdown">रजेचा प्रकार</label>
-        <select id="dropdown" name="dropdown">
-            <!-- <option value="" disabled selected>प्रकार निवडा</option> -->
+        <div class="section">
+            <label for="fullname">पूर्ण नाव:</label>
+            <input
+              type="text"
+              id="fullname"
+              [(ngModel)]="leaveForm.fullname"
+              name="fullname"
+              [value]="fullname"
+              disabled
+            />
+        </div>
+        <label for="leavetype">रजेचा प्रकार</label>
+        <select id="leavetype" name="leavetype" [(ngModel)]="leaveForm.leavetype">
+            <option value="" disabled selected>प्रकार निवडा</option>
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -23,14 +35,14 @@
 
     <div class="form-group date-group">
         <label for="fromDate" class="date-label">कधीपासून</label>
-        <input type="date" id="fromDate" name="fromDate">
+        <input type="date" id="fromDate" name="fromDate" [(ngModel)]="leaveForm.fromDate">
         <label for="toDate" class="date-label">कधीपर्यंत</label>
-        <input type="date" id="toDate" name="toDate">
+        <input type="date" id="toDate" name="toDate" [(ngModel)]="leaveForm.toDate">
     </div>
 
     <div class="form-group">
-        <label for="inputText">कारण</label>
-        <input type="text" id="inputText" name="inputText" placeholder="Enter text here">
+        <label for="leavereason">कारण</label>
+        <input type="text" id="leavereason" name="leavereason" placeholder="Enter text here" [(ngModel)]="leaveForm.leavereason">
     </div>
 
     <div class="form-group button-center">

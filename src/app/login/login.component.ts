@@ -15,8 +15,7 @@ export class LoginComponent {
 
   onSubmit(form: NgForm) {
     if (form.valid) {
-      // Get loginInput instead of username since the input field name is changed to loginInput
-      const { loginInput, password } = form.value; 
+      const { loginInput, password } = form.value;
       this.login(loginInput, password);
     } else {
       console.log('Form is invalid');
@@ -24,22 +23,21 @@ export class LoginComponent {
   }
 
   login(identifier: string, password: string) {
-    // Determine if the identifier is a mobile number or a username
-    const isMobileNumber = /^\d{10}$/.test(identifier); // Check for 10-digit mobile number format
+    const isMobileNumber = /^\d{10}$/.test(identifier);
     const loginData = isMobileNumber 
       ? { mobileno: identifier, password } 
       : { username: identifier, password };
 
     this.http.post<any>('http://localhost:8080/api/admins/login', loginData)
       .subscribe(response => {
-        if (response && response.appoint) {
+        if (response && response.fullname) {
+          localStorage.setItem('employeeName', response.fullname); // Store fullname in local storage
           Swal.fire({
             title: 'Login Successful!',
             text: 'You have logged in successfully!',
             icon: 'success',
             confirmButtonText: 'OK'
           }).then(() => {
-            // Navigate based on appoint type
             this.navigateByAppoint(response.appoint);
           });
         } else {
@@ -73,7 +71,7 @@ export class LoginComponent {
         this.router.navigate(['/ceo']);
         break;
       default:
-        this.router.navigate(['/employee']); // Redirect all other roles as employees
+        this.router.navigate(['/employee']); // Redirect to employee dashboard
         break;
     }
   }
