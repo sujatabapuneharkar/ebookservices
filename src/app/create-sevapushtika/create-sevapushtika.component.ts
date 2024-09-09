@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -8,9 +8,12 @@ import { catchError } from 'rxjs/operators';
   templateUrl: './create-sevapushtika.component.html',
   styleUrls: ['./create-sevapushtika.component.css'],
 })
-export class CreateSevapushtikaComponent {
+export class CreateSevapushtikaComponent implements OnInit {
   sevaPushtika = {
     fullname: '',
+    empuniqueid: '',
+    appoint: '',
+    office: '',
     castreligion: '',
     currentaddress: '',
     declaredvillageadd: '',
@@ -26,26 +29,57 @@ export class CreateSevapushtikaComponent {
     officerdesign: '',
   };
 
-  private apiUrl = 'http://localhost:8080/api/sevapushtika/add'; 
+  fullNames: string[] = [];
+  admins: any[] = []; // To store the full admin objects
+
+  private adminsApiUrl = 'http://localhost:8080/api/admins';
+  private sevaPushtikaApiUrl = 'http://localhost:8080/api/sevapushtika/add';
 
   constructor(private http: HttpClient) {}
 
+  ngOnInit() {
+    this.loadFullNames();
+  }
+
+  loadFullNames() {
+    this.http.get<any[]>(this.adminsApiUrl)
+      .pipe(catchError(this.handleError))
+      .subscribe({
+        next: (admins) => {
+          this.admins = admins;
+          this.fullNames = admins.map(admin => admin.fullname);
+        },
+        error: (error) => {
+          console.error('Error fetching full names:', error);
+        }
+      });
+  }
+
+  onNameSelected(event: any) {
+    const selectedName = event.target.value;
+    const selectedAdmin = this.admins.find(admin => admin.fullname === selectedName);
+    if (selectedAdmin) {
+      this.sevaPushtika.fullname = selectedAdmin.fullname;
+      this.sevaPushtika.empuniqueid = selectedAdmin.empuniqueid;
+      this.sevaPushtika.appoint = selectedAdmin.appoint;
+      this.sevaPushtika.office = selectedAdmin.office;
+    }
+  }
+
   onSubmit() {
-    console.log('Form data before submission:', this.sevaPushtika); 
+    console.log('Form data before submission:', this.sevaPushtika);
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    this.http.post(this.apiUrl, this.sevaPushtika, { headers })
-      .pipe(
-        catchError(this.handleError) 
-      )
+    this.http.post(this.sevaPushtikaApiUrl, this.sevaPushtika, { headers })
+      .pipe(catchError(this.handleError))
       .subscribe({
         next: (response) => {
           alert('Data submitted successfully!');
-          console.log('Response:', response); 
+          console.log('Response:', response);
         },
         error: (error) => {
           alert('Error submitting data. Please try again.');
-          console.error('Error details:', error); 
+          console.error('Error details:', error);
         }
       });
   }

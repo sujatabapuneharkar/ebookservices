@@ -18,11 +18,57 @@
     </div>
   </div>
   <div class="underline"></div>
+  <label for="fullname">कर्मचारी:</label>
+  <select id="fullname" (change)="onNameSelected($event)" name="fullname">
+    <option value="" disabled selected>निवडा</option>
+    <option *ngFor="let name of fullNames" [value]="name">{{ name }}</option>
+  </select>
+
   <form (ngSubmit)="onSubmit()">
     <div class="section">
-      <label for="fullname">१. नाव</label>
-      <input type="text" id="fullname" [(ngModel)]="sevaPushtika.fullname" name="fullname" required />
+      <label for="fullname">१. पूर्ण नाव:</label>
+      <input
+        type="text"
+        id="fullname"
+        [(ngModel)]="sevaPushtika.fullname"
+        name="fullname"
+        required
+      />
     </div>
+
+    <div class="section">
+      <label for="empuniqueid">२. कर्मचारी अद्वितीय आयडी:</label>
+      <input
+        type="text"
+        id="empuniqueid"
+        [(ngModel)]="sevaPushtika.empuniqueid"
+        name="empuniqueid"
+        required
+      />
+    </div>
+
+    <div class="section">
+      <label for="appoint">३. नियुक्तीची माहिती:</label>
+      <input
+        type="text"
+        id="appoint"
+        [(ngModel)]="sevaPushtika.appoint"
+        name="appoint"
+        required
+      />
+    </div>
+
+    <div class="section">
+      <label for="office">४. कार्यालयाचे नाव:</label>
+      <input
+        type="text"
+        id="office"
+        [(ngModel)]="sevaPushtika.office"
+        name="office"
+        required
+      />
+    </div>
+  
     <div class="section">
       <label for="castreligion">१. धर्म , जात (प्रवर्गासह) :</label>
       <input type="text" id="castreligion" [(ngModel)]="sevaPushtika.castreligion" name="castreligion" required />
