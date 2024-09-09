@@ -49,3 +49,28 @@
         <button type="submit">अर्ज करा</button>
     </div>
 </form>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>अनु.क्र.</th>
+                <th>रजेचा प्रकार</th>
+                <th>कारण</th>
+                <th>कधीपासून</th>
+                <th>कधीपर्यंत</th>
+                <th>स्थिती</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let leave of leaveData">
+                <td>{{ leave.id }}</td>
+                <td>{{ leave.leavetype }}</td>
+                <td>{{ leave.leavereason }}</td>
+                <td>{{ leave.fromDate | date }}</td>
+                <td>{{ leave.toDate | date }}</td>
+                <td [ngClass]="{'approved': leave.status === 'Approved', 'rejected': leave.status === 'Rejected'}">{{ leave.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

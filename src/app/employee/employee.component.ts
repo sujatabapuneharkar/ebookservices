@@ -16,14 +16,17 @@ export class EmployeeComponent implements OnInit {
     toDate: '',
     leavereason: ''
   };
+  leaveData: any[] = []; // Array to store leave data
 
   private loginApiUrl = 'http://localhost:8080/api/admins/login';
   private leaveApiUrl = 'http://localhost:8080/api/employee-leave/add';
+  private getLeaveDataUrl = 'http://localhost:8080/api/employee-leave/all'; // API endpoint for leave data
 
   constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.getFullName();
+    this.fetchLeaveData(); // Fetch leave data when component initializes
   }
 
   logout(): void {
@@ -36,6 +39,17 @@ export class EmployeeComponent implements OnInit {
     this.leaveForm.fullname = this.fullname; // Initialize the fullname field in leaveForm
   }
 
+  fetchLeaveData(): void {
+    this.http.get<any[]>(this.getLeaveDataUrl).subscribe({
+      next: (data) => {
+        this.leaveData = data; // Update the leaveData property with the fetched data
+      },
+      error: (error) => {
+        console.error('Error fetching leave data:', error);
+      }
+    });
+  }
+
   onSubmit(): void {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
@@ -44,6 +58,7 @@ export class EmployeeComponent implements OnInit {
         next: (response) => {
           alert('Leave application submitted successfully!');
           console.log('Response:', response);
+          this.fetchLeaveData(); // Refresh the leave data after submitting
         },
         error: (error) => {
           alert('Error submitting leave application. Please try again.');
