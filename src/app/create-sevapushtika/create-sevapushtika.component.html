@@ -1,95 +1,82 @@
 <app-navbar></app-navbar>
 <div class="navdiv">
-    <a href="clerk"><span class="nav-text">सेवा पुस्तिका यादी</span></a>
-    <a href="create-employee"><span class="nav-text">कर्मचारी तयार करा</span></a>
-    <a href="create-sevapushtika"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
-    <a href="upload-sevapushtika"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
-    <span id="emp">Hello, Clerk</span>
-    <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
+  <a routerLink="/clerk"><span class="nav-text">सेवा पुस्तिका यादी</span></a>
+  <a routerLink="/create-employee"><span class="nav-text">कर्मचारी तयार करा</span></a>
+  <a routerLink="/create-sevapushtika"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
+  <a routerLink="/upload-sevapushtika"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
+  <span id="emp">Hello, Clerk</span>
+  <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
 </div>
-<body>
-        <div class="container">
-            <div class="header">
-                <h1>सेवा पुस्तिका तयार करा</h1>  
-                <div class="icon-container">
-                    <button class="print"><i class="fa-solid fa-print"></i></button>
-                    <button class="excel"><i class="fa-solid fa-file-excel"></i></button>
-                    <button class="pdf"><i class="fa-solid fa-file-pdf"></i></button>
-                </div>
-            </div>
-         <div class="underline"></div>
-         <div class="cantainer">
-            <div class="label">कर्मचारी :</div>
-            <input type="text" class="input-box" placeholder="निवडा">
-            <button class="button">पहा</button>
-        </div>
-        <form>
-        <div class="section">
-            <label for="fullname">पूर्ण नाव : </label>
-            <label for="appoint">पद : </label>
-        </div>
-        <div class="section">
-            <label for="office">कार्यालय : </label>
-            <label for="empuniqueid">सेवायर्ह आयडी : </label>
-        </div>
-        <div class="section">
-            <label for="castreligion">१. धर्म , जात (प्रवर्गासह) :</label>
-            <input type="text" id="castreligion" placeholder="धर्म , जात ">
-        </div>
-        <div class="section">
-            <label for="currentaddress">२ . (अ) सध्याचा पत्ता -</label>
-            <input type="text" id="currentaddress" placeholder="पत्ता">
-        </div>
-        <div class="section">
-            <label for="declaredvillageadd">( ब ) घोषित केलेला स्वग्राम व पत्ता -</label>
-            <input type="text" id="declaredvillageadd">
-        </div>
-        <div class="section">
-            <label for="nameresidofvictim">३. बळींचे नाव व राहण्याचे ठिकाण :</label>
-            <input type="text" id="nameresidofvictim">
-        </div>
-        <div class="section">
-            <label>४. जन्मतारखेनक नक्की करून तो खोटी सन्मानाने लिहिता येईल तेव्हा अचूक लिहावा</label>
-            <input type="text">
-        </div>
-        <div class="section">
-            <label>५. तंतोतंत उंची -</label>
-            <input type="text">
-        </div>
-        <div class="section">
-            <label>६. ओळखपत्रासाठी अंगठ्याचे खुणा -</label>
-            <input type="text">
-        </div>
-        <div class="section">
-            <label>७. (अ) नियुक्तीच्या वेळी शैक्षणिक अहर्ता -</label>
-            <input type="text">
-        </div>
-        <div class="section">
-            <label>( ब ) नियुक्तीनंतर प्राप्त केलेली शैक्षणिक अहर्ता -</label>
-            <input type="text">
-        </div>
-        <div class="section">
-            <label>८. शासकीय कर्मचाऱ्यांची दिनांकित सही -</label>
-            <input type="text">
-        </div>
-        <div class="section">
-            <label>९. क्रमांक १ ते २ सहीची नोंदी तपासल्यानंतर कार्यालय प्रमुखाची अथवा इतर कोणत्याही साक्षांकित अधिकाऱ्यांची दिनांकित सही व पदनाम</label>
-            <input type="text">
-        </div>
-        <div class="section">
-            <label>१०. वैद्यकीय तपासणीचा अहवाल :</label>
-        </div>
-        <div class="section">
-            <label>( एक ) प्रमाणपत्र क्रमांक व दिनांक -</label>
-            <input type="text">
-        </div>
-        <div class="section">
-            <label>( दोन ) प्रमाणपत्र देणारा अधिकारी व त्याचे पदनाम -</label>
-            <input type="text">
-        </div>
-        <div class="form-group button-center">
-            <button type="submit">सेव</button>
-        </div>
-    </form>
+
+<div class="container">
+  <div class="header">
+    <h1>सेवा पुस्तिका तयार करा</h1>
+    <div class="icon-container">
+      <button class="print"><i class="fa-solid fa-print"></i></button>
+      <button class="excel"><i class="fa-solid fa-file-excel"></i></button>
+      <button class="pdf"><i class="fa-solid fa-file-pdf"></i></button>
     </div>
-</body>
+  </div>
+  <div class="underline"></div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="section">
+      <label for="fullname">१. नाव</label>
+      <input type="text" id="fullname" [(ngModel)]="sevaPushtika.fullname" name="fullname" required />
+    </div>
+    <div class="section">
+      <label for="castreligion">१. धर्म , जात (प्रवर्गासह) :</label>
+      <input type="text" id="castreligion" [(ngModel)]="sevaPushtika.castreligion" name="castreligion" required />
+    </div>
+    <div class="section">
+      <label for="currentaddress">२ . (अ) सध्याचा पत्ता -</label>
+      <input type="text" id="currentaddress" [(ngModel)]="sevaPushtika.currentaddress" name="currentaddress" />
+    </div>
+    <div class="section">
+      <label for="declaredvillageadd">( ब ) घोषित केलेला स्वग्राम व पत्ता -</label>
+      <input type="text" id="declaredvillageadd" [(ngModel)]="sevaPushtika.declaredvillageadd" name="declaredvillageadd" />
+    </div>
+    <div class="section">
+      <label for="nameresidofvictim">३. बळींचे नाव व राहण्याचे ठिकाण :</label>
+      <input type="text" id="nameresidofvictim" [(ngModel)]="sevaPushtika.nameresidofvictim" name="nameresidofvictim" />
+    </div>
+    <div class="section">
+      <label for="writedobcorrect">४. जन्मतारखेनक नक्की करून तो खोटी सन्मानाने लिहिता येईल तेव्हा अचूक लिहावा</label>
+      <input type="text" id="writedobcorrect" [(ngModel)]="sevaPushtika.writedobcorrect" name="writedobcorrect" />
+    </div>
+    <div class="section">
+      <label for="exactheight">५. तंतोतंत उंची -</label>
+      <input type="text" id="exactheight" [(ngModel)]="sevaPushtika.exactheight" name="exactheight" />
+    </div>
+    <div class="section">
+      <label for="identifiedmarkonbody">६. ओळखपत्रासाठी अंगठ्याचे खुणा -</label>
+      <input type="text" id="identifiedmarkonbody" [(ngModel)]="sevaPushtika.identifiedmarkonbody" name="identifiedmarkonbody" />
+    </div>
+    <div class="section">
+      <label for="eduatappoint">७. (अ) नियुक्तीच्या वेळी शैक्षणिक अहर्ता -</label>
+      <input type="text" id="eduatappoint" [(ngModel)]="sevaPushtika.eduatappoint" name="eduatappoint" />
+    </div>
+    <div class="section">
+      <label for="eduafterappoint">( ब ) नियुक्तीनंतर प्राप्त केलेली शैक्षणिक अहर्ता -</label>
+      <input type="text" id="eduafterappoint" [(ngModel)]="sevaPushtika.eduafterappoint" name="eduafterappoint" />
+    </div>
+    <div class="section">
+      <label for="govsigndate">८. शासकीय कर्मचाऱ्यांची दिनांकित सही -</label>
+      <input type="text" id="govsigndate" [(ngModel)]="sevaPushtika.govsigndate" name="govsigndate" />
+    </div>
+    <div class="section">
+      <label for="datesignnddesign">९. क्रमांक १ ते २ सहीची नोंदी तपासल्यानंतर कार्यालय प्रमुखाची अथवा इतर कोणत्याही साक्षांकित अधिकाऱ्यांची दिनांकित सही व पदनाम</label>
+      <input type="text" id="datesignnddesign" [(ngModel)]="sevaPushtika.datesignnddesign" name="datesignnddesign" />
+    </div>
+    <div class="section">
+      <label for="certnodate">( एक ) प्रमाणपत्र क्रमांक व दिनांक -</label>
+      <input type="text" id="certnodate" [(ngModel)]="sevaPushtika.certnodate" name="certnodate" />
+    </div>
+    <div class="section">
+      <label for="officerdesign">( दोन ) प्रमाणपत्र देणारा अधिकारी व त्याचे पदनाम -</label>
+      <input type="text" id="officerdesign" [(ngModel)]="sevaPushtika.officerdesign" name="officerdesign" />
+    </div>
+    <div class="form-group button-center">
+      <button type="submit">सेव</button>
+    </div>
+  </form>
+</div>
