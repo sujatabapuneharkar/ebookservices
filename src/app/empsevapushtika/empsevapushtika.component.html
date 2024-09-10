@@ -21,7 +21,7 @@
     <div class="navigation">
       <i class="fas fa-arrow-left"></i>
       <div class="page-number">पृष्ठ क्र. - 1/30</div>
-      <i class="fas fa-arrow-right"></i>
+      <a href="sevapushtika-empname"><i class="fas fa-arrow-right"></i></a>
     </div>
     <form>
       <div class="section">
@@ -38,59 +38,59 @@
       </div>
       <div class="section">
         <label for="castreligion">१. धर्म , जात (प्रवर्गासह) :</label>
-        <input type="text" id="castreligion" [value]="empData.castreligion || ''" />
+        <input type="text" id="castreligion" [value]="empData.castreligion || ''" readonly/>
       </div>
       <div class="section">
         <label for="currentaddress">२ . (अ) सध्याचा पत्ता -</label>
-        <input type="text" id="currentaddress" [value]="empData.currentaddress || ''" />
+        <input type="text" id="currentaddress" [value]="empData.currentaddress || ''" readonly/>
       </div>
       <div class="section">
         <label for="declaredvillageadd">( ब ) घोषित केलेला स्वग्राम व पत्ता -</label>
-        <input type="text" id="declaredvillageadd" [value]="empData.declaredvillageadd || ''" />
+        <input type="text" id="declaredvillageadd" [value]="empData.declaredvillageadd || ''" readonly/>
       </div>
       <div class="section">
         <label for="nameresidofvictim">३. बळींचे नाव व राहण्याचे ठिकाण :</label>
-        <input type="text" id="nameresidofvictim" [value]="empData.nameresidofvictim || ''" />
+        <input type="text" id="nameresidofvictim" [value]="empData.nameresidofvictim || ''"readonly />
       </div>
       <div class="section">
         <label for="writedobcorrect">४. जन्मतारखेनक नक्की करून तो खोटी सन्मानाने लिहिता येईल तेव्हा अचूक लिहावा</label>
-        <input type="text" id="writedobcorrect" [value]="empData.writedobcorrect || ''" />
+        <input type="text" id="writedobcorrect" [value]="empData.writedobcorrect || ''" readonly/>
       </div>
       <div class="section">
         <label for="exactheight">५. तंतोतंत उंची -</label>
-        <input type="text" id="exactheight" [value]="empData.exactheight || ''" />
+        <input type="text" id="exactheight" [value]="empData.exactheight || ''" readonly/>
       </div>
       <div class="section">
         <label for="identifiedmarkonbody">६. ओळखपत्रासाठी अंगठ्याचे खुणा -</label>
-        <input type="text" id="identifiedmarkonbody" [value]="empData.identifiedmarkonbody || ''" />
+        <input type="text" id="identifiedmarkonbody" [value]="empData.identifiedmarkonbody || ''"readonly />
       </div>
       <div class="section">
         <label for="eduatappoint">७. (अ) नियुक्तीच्या वेळी शैक्षणिक अहर्ता -</label>
-        <input type="text" id="eduatappoint" [value]="empData.eduatappoint || ''" />
+        <input type="text" id="eduatappoint" [value]="empData.eduatappoint || ''" readonly/>
       </div>
       <div class="section">
         <label for="eduafterappoint">( ब ) नियुक्तीनंतर प्राप्त केलेली शैक्षणिक अहर्ता -</label>
-        <input type="text" id="eduafterappoint" [value]="empData.eduafterappoint || ''" />
+        <input type="text" id="eduafterappoint" [value]="empData.eduafterappoint || ''" readonly/>
       </div>
       <div class="section">
         <label for="govsigndate">८. शासकीय कर्मचाऱ्यांची दिनांकित सही -</label>
-        <input type="text" id="govsigndate" [value]="empData.govsigndate || ''" />
+        <input type="text" id="govsigndate" [value]="empData.govsigndate || ''" readonly/>
       </div>
       <div class="section">
         <label for="datesignnddesign">९. क्रमांक १ ते २ सहीची नोंदी तपासल्यानंतर कार्यालय प्रमुखाची अथवा इतर
           कोणत्याही साक्षांकित अधिकाऱ्यांची दिनांकित सही व पदनाम</label>
-        <input type="text" id="datesignnddesign" [value]="empData.datesignnddesign || ''" />
+        <input type="text" id="datesignnddesign" [value]="empData.datesignnddesign || ''"readonly />
       </div>
       <div class="section">
         <label>१०. वैद्यकीय तपासणीचा अहवाल :</label>
       </div>
       <div class="section">
         <label for="certnodate">( एक ) प्रमाणपत्र क्रमांक व दिनांक -</label>
-        <input type="text" id="certnodate" [value]="empData.certnodate || ''" />
+        <input type="text" id="certnodate" [value]="empData.certnodate || ''" readonly/>
       </div>
       <div class="section">
         <label for="officerdesign">( दोन ) प्रमाणपत्र देणारा अधिकारी व त्याचे पदनाम -</label>
-        <input type="text" id="officerdesign" [value]="empData.officerdesign || ''" />
+        <input type="text" id="officerdesign" [value]="empData.officerdesign || ''" readonly/>
       </div>
     </form>
     <div class="footer">
