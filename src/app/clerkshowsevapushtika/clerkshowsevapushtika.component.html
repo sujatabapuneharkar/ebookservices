@@ -1,100 +1,106 @@
 <app-navbar></app-navbar>
 <div class="navdiv">
-    <a href="#"><span class="nav-text">सेवा पुस्तिका यादी</span></a>
-    <a href="#"><span class="nav-text">कर्मचारी तयार करा</span></a>
-    <a href="#"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
-    <a href="#"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
+  <a href="clerk"><span class="nav-text">सेवा पुस्तिका यादी</span></a>
+  <a href="create-employee"><span class="nav-text">कर्मचारी तयार करा</span></a>
+  <a href="create-sevapushtika"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
+  <a href="upload-sevapushtika"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
     <span id="emp">Hello, Clerk</span>
     <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
 </div>
+
 <body>
-        <div class="container">
-            <div class="header">
-                <h1>सेवा पुस्तिका</h1>  
-                <div class="icon-container">
-                    <button class="print"><i class="fa-solid fa-print"></i></button>
-                    <button class="excel"><i class="fa-solid fa-file-excel"></i></button>
-                    <button class="pdf"><i class="fa-solid fa-file-pdf"></i></button>
-                </div>
-            </div>
-         <div class="underline"></div>
-         <div class="navigation">
-            <i class="fas fa-arrow-left"></i>
-            <div class="page-number">पृष्ठ क्र. - 1/30</div>
-            <i class="fas fa-arrow-right"></i>
+    <div class="container">
+      <div class="header">
+        <h1>सेवा पुस्तिका</h1>
+        <div class="icon-container">
+          <button class="print"><i class="fa-solid fa-print"></i></button>
+          <button class="excel"><i class="fa-solid fa-file-excel"></i></button>
+          <button class="pdf"><i class="fa-solid fa-file-pdf"></i></button>
         </div>
-        <form>
+      </div>
+      <div class="underline"></div>
+      <div class="navigation">
+        <i class="fas fa-arrow-left"></i>
+        <div class="page-number">पृष्ठ क्र. - 1/30</div>
+        <a href="sevapushtika-empname"><i class="fas fa-arrow-right"></i></a>
+      </div>
+      <form>
         <div class="section">
-            <label>पूर्ण नाव : </label>
-            <label>पद : </label>
-        </div>
-        <div class="section">
-            <label>कार्यालय : जिल्हा परिषद, कोल्हापुर</label>
-            <label>सेवायर्ह आयडी : </label>
+          <label for="fullname">पूर्ण नाव :</label>
+          <input type="text" id="fullname" [value]="empData.fullname || ''" readonly />
+          <label for="appoint">पद :</label>
+          <input type="text" id="appoint" [value]="empData.appoint || ''" readonly />
         </div>
         <div class="section">
-            <label>१. धर्म , जात (प्रवर्गासह) :</label>
-            <input type="text" placeholder="धर्म , जात ">
+          <label for="office">कार्यालय :</label>
+          <input type="text" id="office" [value]="empData.office || ''" readonly />
+          <label for="empuniqueid">सेवायर्ह आयडी :</label>
+          <input type="text" id="empuniqueid" [value]="empData.empuniqueid || ''" readonly />
         </div>
         <div class="section">
-            <label>२ . (अ) सध्याचा पत्ता -</label>
-            <input type="text" placeholder="पत्ता">
+          <label for="castreligion">१. धर्म , जात (प्रवर्गासह) :</label>
+          <input type="text" id="castreligion" [value]="empData.castreligion || ''" readonly/>
         </div>
         <div class="section">
-            <label>( ब ) घोषित केलेला स्वग्राम व पत्ता -</label>
-            <input type="text">
+          <label for="currentaddress">२ . (अ) सध्याचा पत्ता -</label>
+          <input type="text" id="currentaddress" [value]="empData.currentaddress || ''" readonly/>
         </div>
         <div class="section">
-            <label>३. बळींचे नाव व राहण्याचे ठिकाण :</label>
-            <input type="text">
+          <label for="declaredvillageadd">( ब ) घोषित केलेला स्वग्राम व पत्ता -</label>
+          <input type="text" id="declaredvillageadd" [value]="empData.declaredvillageadd || ''" readonly/>
         </div>
         <div class="section">
-            <label>४. जन्मतारखेनक नक्की करून तो खोटी सन्मानाने लिहिता येईल तेव्हा अचूक लिहावा</label>
-            <input type="text">
+          <label for="nameresidofvictim">३. बळींचे नाव व राहण्याचे ठिकाण :</label>
+          <input type="text" id="nameresidofvictim" [value]="empData.nameresidofvictim || ''"readonly />
         </div>
         <div class="section">
-            <label>५. तंतोतंत उंची -</label>
-            <input type="text">
+          <label for="writedobcorrect">४. जन्मतारखेनक नक्की करून तो खोटी सन्मानाने लिहिता येईल तेव्हा अचूक लिहावा</label>
+          <input type="text" id="writedobcorrect" [value]="empData.writedobcorrect || ''" readonly/>
         </div>
         <div class="section">
-            <label>६. ओळखपत्रासाठी अंगठ्याचे खुणा -</label>
-            <input type="text">
+          <label for="exactheight">५. तंतोतंत उंची -</label>
+          <input type="text" id="exactheight" [value]="empData.exactheight || ''" readonly/>
         </div>
         <div class="section">
-            <label>७. (अ) नियुक्तीच्या वेळी शैक्षणिक अहर्ता -</label>
-            <input type="text">
+          <label for="identifiedmarkonbody">६. ओळखपत्रासाठी अंगठ्याचे खुणा -</label>
+          <input type="text" id="identifiedmarkonbody" [value]="empData.identifiedmarkonbody || ''"readonly />
         </div>
         <div class="section">
-            <label>( ब ) नियुक्तीनंतर प्राप्त केलेली शैक्षणिक अहर्ता -</label>
-            <input type="text">
+          <label for="eduatappoint">७. (अ) नियुक्तीच्या वेळी शैक्षणिक अहर्ता -</label>
+          <input type="text" id="eduatappoint" [value]="empData.eduatappoint || ''" readonly/>
         </div>
         <div class="section">
-            <label>८. शासकीय कर्मचाऱ्यांची दिनांकित सही -</label>
-            <input type="text">
+          <label for="eduafterappoint">( ब ) नियुक्तीनंतर प्राप्त केलेली शैक्षणिक अहर्ता -</label>
+          <input type="text" id="eduafterappoint" [value]="empData.eduafterappoint || ''" readonly/>
         </div>
         <div class="section">
-            <label>९. क्रमांक १ ते २ सहीची नोंदी तपासल्यानंतर कार्यालय प्रमुखाची अथवा इतर कोणत्याही साक्षांकित अधिकाऱ्यांची दिनांकित सही व पदनाम</label>
-            <input type="text">
+          <label for="govsigndate">८. शासकीय कर्मचाऱ्यांची दिनांकित सही -</label>
+          <input type="text" id="govsigndate" [value]="empData.govsigndate || ''" readonly/>
         </div>
         <div class="section">
-            <label>१०. वैद्यकीय तपासणीचा अहवाल :</label>
+          <label for="datesignnddesign">९. क्रमांक १ ते २ सहीची नोंदी तपासल्यानंतर कार्यालय प्रमुखाची अथवा इतर
+            कोणत्याही साक्षांकित अधिकाऱ्यांची दिनांकित सही व पदनाम</label>
+          <input type="text" id="datesignnddesign" [value]="empData.datesignnddesign || ''"readonly />
         </div>
         <div class="section">
-            <label>( एक ) प्रमाणपत्र क्रमांक व दिनांक -</label>
-            <input type="text">
+          <label>१०. वैद्यकीय तपासणीचा अहवाल :</label>
         </div>
         <div class="section">
-            <label>( दोन ) प्रमाणपत्र देणारा अधिकारी व त्याचे पदनाम -</label>
-            <input type="text">
+          <label for="certnodate">( एक ) प्रमाणपत्र क्रमांक व दिनांक -</label>
+          <input type="text" id="certnodate" [value]="empData.certnodate || ''" readonly/>
         </div>
-    </form>
-        <div class="footer">
-            <div class="navigation">
-                <i class="fas fa-arrow-left"></i>
-                <div class="page-number">पृष्ठ क्र. - 1/30</div>
-                <i class="fas fa-arrow-right"></i>
-            </div>
+        <div class="section">
+          <label for="officerdesign">( दोन ) प्रमाणपत्र देणारा अधिकारी व त्याचे पदनाम -</label>
+          <input type="text" id="officerdesign" [value]="empData.officerdesign || ''" readonly/>
         </div>
-    
+      </form>
+      <div class="footer">
+        <div class="navigation">
+          <i class="fas fa-arrow-left"></i>
+          <div class="page-number">पृष्ठ क्र. - 1/30</div>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
+  

@@ -5,12 +5,11 @@
     <a href="create-sevapushtika"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
     <a href="upload-sevapushtika"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
     <span id="emp">Hello, Clerk</span>
-    <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
+    <a href="#" id="logout" class="nav-text" (click)="logout()">Logout</a>
 </div>
 <span class="container">
     <h2>सेवा पुस्तिका यादी</h2>
 </span>
-
 
 <form class="leave-form">
     <div class="form-group date-group">
@@ -25,7 +24,7 @@
         <input type="date" id="toDate" name="toDate" placeholder="दिनांक">
     </div>
 
-    <div class="form-group button-center ">
+    <div class="form-group button-center">
         <button type="submit">पाहा</button>
     </div>
    <br>
@@ -48,40 +47,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>अजय मिश्रा</td>
-                <td><a href="#">10</a></td>
+            <tr *ngFor="let entry of entryBooks">
+                <td>{{ entry.id }}</td>
+                <td>{{ entry.fullname }}</td>
+                <td><a href="">{{ entry.count }}</a></td>
                 <td>
-                    <button class="btn btn-green">पुष्टिकरण पढ़ा</button>
-                    <button class="btn btn-blue" routerLink="entrybook">नोंद +</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>खालिद मोहम्मद</td>
-                <td><a href="#">35</a></td>
-                <td>
-                    <button class="btn btn-green">पुष्टिकरण पढ़ा</button>
-                    <button class="btn btn-blue">नोंद+</button>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>मनीष गोखले</td>
-                <td><a href="#">27</a></td>
-                <td>
-                    <button class="btn btn-green">पुष्टिकरण पढ़ा</button>
-                    <button class="btn btn-blue">नोंद +</button>
-                </td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>शेखर खान</td>
-                <td><a href="#">40</a></td>
-                <td>
-                    <button class="btn btn-green">पुष्टिकरण पढ़ा</button>
-                    <button class="btn btn-blue">नोंद +</button>
+                    <button class="btn btn-green" (click)="viewSevaPushtika(entry.fullname)">पुष्टिकरण पढ़ा</button>
+                    <a href="entrybook"><button class="btn btn-blue">नोंद +</button></a>
                 </td>
             </tr>
         </tbody>
