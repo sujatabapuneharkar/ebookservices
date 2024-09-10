@@ -50,7 +50,9 @@
             <tr *ngFor="let entry of entryBooks">
                 <td>{{ entry.id }}</td>
                 <td>{{ entry.fullname }}</td>
-                <td><a href="">{{ entry.count }}</a></td>
+                <td>
+                    <a [routerLink]="['/empentrybook']" [queryParams]="{ fullname: entry.fullname }">{{ entry.count }}</a>
+                </td>
                 <td>
                     <button class="btn btn-green" (click)="viewSevaPushtika(entry.fullname)">पुष्टिकरण पढ़ा</button>
                     <a href="entrybook"><button class="btn btn-blue">नोंद +</button></a>
