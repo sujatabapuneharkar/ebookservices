@@ -7,39 +7,52 @@
   <span id="emp">Hello, Clerk</span>
   <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
 </div>
-<div class="cantainer">
+
+<div class="container">
   <h2>कर्मचारी तयार करा</h2>
   <div class="underline"></div>
-  <br>
-  <form (ngSubmit)="onSubmit()">
+
+  <form #form="ngForm" (ngSubmit)="onSubmit()" class="form-grid">
     <div>
-      <label for="fullname">Full Name:</label>
+      <label for="fullname">पूर्ण नाव</label>
       <input type="text" id="fullname" [(ngModel)]="employee.fullname" name="fullname" required>
     </div>
     <div>
-      <label for="appoint">Appoint:</label>
+      <label for="appoint">पद</label>
       <input type="text" id="appoint" [(ngModel)]="employee.appoint" name="appoint">
     </div>
     <div>
-      <label for="remainingleaves">Remaining Leaves:</label>
+      <label for="remainingleaves">उर्वरित रजा</label>
       <input type="number" id="remainingleaves" [(ngModel)]="employee.remainingleaves" name="remainingleaves">
     </div>
     <div>
-      <label for="empuniqueid">Employee Unique ID:</label>
+      <label for="empuniqueid">सेवार्थ आयडी</label>
       <input type="text" id="empuniqueid" [(ngModel)]="employee.empuniqueid" name="empuniqueid" required>
     </div>
     <div>
-      <label for="mobileno">Mobile No:</label>
-      <input type="text" id="mobileno" [(ngModel)]="employee.mobileno" name="mobileno" required>
+      <label for="mobileno">मोबाईल नंबर</label>
+      <input 
+        type="text" 
+        id="mobileno" 
+        [(ngModel)]="employee.mobileno" 
+        name="mobileno" 
+        required 
+        pattern="^[0-9]{10}$" 
+        title="Mobile number must be exactly 10 digits"
+        #mobileno="ngModel">
+      <div *ngIf="mobileno.invalid && mobileno.touched" class="error">
+        Mobile number must be exactly 10 digits.
+      </div>
     </div>
     <div>
-      <label for="office">Office:</label>
+      <label for="office">कार्यालय</label>
       <input type="text" id="office" [(ngModel)]="employee.office" name="office">
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit" class="submit-btn" [disabled]="form.invalid">Submit</button>
   </form>
   
-
+</div>
+<div class="container2">
   <table>
     <thead>
       <tr>
@@ -61,9 +74,10 @@
         <td>{{ emp.office }}</td>
         <td>{{ emp.remainingleaves }}</td>
         <td>
-          <button class="delete"><i class="fa-solid fa-trash-can"></i></button>
+          <button class="delete" (click)="deleteEmployee(emp.fullname)"><i class="fa-solid fa-trash-can"></i></button>
           <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
         </td>
       </tr>
     </tbody>
   </table>
+</div>

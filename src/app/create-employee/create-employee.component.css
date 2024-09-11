@@ -1,17 +1,14 @@
-
 .navdiv {
     background-color: blueviolet;
     height: 40px;
     display: flex;
     align-items: center;
     padding: 0 20px;
+    flex-wrap: wrap; /* Allows wrapping if needed */
 }
 
-a {
+.navdiv a, .nav-text {
     text-decoration: none;
-}
-
-.nav-text {
     color: white;
     padding: 0 15px;
     font-weight: bold;
@@ -24,12 +21,26 @@ a {
     color: white;
 }
 
+#logout {
+    cursor: pointer;
+}
+
 .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
+    width: 80%; /* Adjust width for responsiveness */
+    max-width: 800px; /* Max width for larger screens */
+    margin: 20px auto; /* Centers the container */
+}
+
+.container2 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 100%; /* Adjust width for responsiveness */
+    max-width: 1200px; /* Max width for larger screens */
     margin: 20px auto; /* Centers the container */
 }
 
@@ -52,29 +63,13 @@ a {
 .underline {
     width: 100px;
     height: 2px;
-    background-color: #00c4cc;
     margin: 0 auto 20px;
-}
-
-/* ------------------------------------------ */
-.cantainer {
-    width: 40%;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-h2 {
-    text-align: center;
-    color: #4a148c;
-    margin-bottom: 20px;
 }
 
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two columns of equal width */
     gap: 10px; /* Space between grid items */
-    align-items: center;
     border: 1px solid #ccc; /* Light gray border around the form grid */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
@@ -82,14 +77,13 @@ h2 {
     background-color: #ffffff; /* White background for better contrast */
 }
 
-/* Reduce gap between label and input */
 label {
     margin-bottom: 2px; /* Reduce the gap between the label and the input box */
 }
 
 input,
 select {
-    padding: 6px; /* Reduced padding for more compact input boxes */
+    padding: 8px; /* Adjust padding for better alignment */
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -106,8 +100,7 @@ select {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
-    width: 20%;
-    margin-left: 200px;
+    width: 100%; /* Full width for button */
 }
 
 .submit-btn:hover {
@@ -119,55 +112,49 @@ select {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
 }
 
-
-/* Table container for basic layout adjustments */
-/* Table styling */
 table {
-    width: 90%; /* Adjust width as needed */
+    width: 100%; /* Full width of container */
     border-collapse: collapse;
-    margin: 50px auto; /* Center the table horizontally */
+    margin-top: 20px;
     font-size: 16px;
     text-align: left;
 }
 
-/* Table headers styling */
 th {
-    padding: 12px; /* Padding inside headers */
+    padding: 12px;
     background-color: #f2f2f2;
-    border: 1px solid #ddd; /* Light border */
+    border: 1px solid #ddd;
 }
 
-/* Table rows styling */
 td {
-    padding: 10px; /* Padding inside cells */
-    border: 1px solid #ddd; /* Light border around cells */
-    color: #333; /* Text color */
+    padding: 10px;
+    border: 1px solid #ddd;
+    color: #333;
 }
 
-/* Table row hover effect */
 tr:hover {
-    background-color: #f2f2f2; /* Light gray background on hover */
+    background-color: #f2f2f2;
 }
-.delete{
+
+.delete {
     background-color: orangered;
 }
-/* Action button styling */
+
 button {
-    background-color: #007bff; /* Blue background for buttons */
-    color: white; /* White text color */
-    border: none; /* Remove default border */
-    padding: 5px 10px; /* Button padding */
-    margin: 0 2px; /* Spacing between buttons */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, transform 0.1s; /* Smooth hover transition */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
-/* Button hover and active effects */
 button:hover {
-    background-color: darkgray; /* Darker blue on hover */
+    background-color: darkgray;
 }
 
 button:active {
-    transform: scale(0.95); /* Slightly reduce size on click */
+    transform: scale(0.95);
 }

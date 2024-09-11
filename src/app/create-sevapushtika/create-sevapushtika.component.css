@@ -30,6 +30,49 @@ a {
     margin-bottom: 20px;
 }
 
+input.ng-touched.ng-invalid {
+    border-color: #e74c3c; /* Red border for invalid fields */
+}
+
+/* Style for the dropdown container */
+select {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #4a148c; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark text color */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    margin-bottom: 15px;
+}
+
+/* Style for the dropdown on focus */
+select:focus {
+    border-color: #6a0dad; /* Highlight border color on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow on focus */
+}
+
+/* Style for dropdown options */
+option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Optional: Adjust dropdown appearance in a dark theme */
+select.dark-mode {
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text color */
+    border: 1px solid #555; /* Darker border color */
+}
+
+select.dark-mode:focus {
+    border-color: #aaa; /* Highlight border color for dark mode */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for dark mode */
+}
+
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -142,6 +185,7 @@ form {
     right: 0;
     padding: 10px; /* Adjust padding as needed */
 }
+
 
 .icon-container button {
     background-color: #f0f0f0; /* Light background for buttons */

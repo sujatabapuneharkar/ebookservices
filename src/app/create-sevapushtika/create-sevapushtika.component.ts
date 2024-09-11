@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-sevapushtika',
@@ -74,11 +75,21 @@ export class CreateSevapushtikaComponent implements OnInit {
       .pipe(catchError(this.handleError))
       .subscribe({
         next: (response) => {
-          alert('Data submitted successfully!');
+          Swal.fire({
+            title: 'Success!',
+            text: 'Data submitted successfully!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
           console.log('Response:', response);
         },
         error: (error) => {
-          alert('Error submitting data. Please try again.');
+          Swal.fire({
+            title: 'Error',
+            text: 'Error submitting data. Please try again.',
+            icon: 'error',
+            confirmButtonText: 'Try Again'
+          });
           console.error('Error details:', error);
         }
       });

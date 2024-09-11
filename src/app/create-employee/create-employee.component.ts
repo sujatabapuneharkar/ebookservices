@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-employee',
@@ -27,6 +28,17 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   onSubmit() {
+    // Check if the mobile number is valid
+    if (!this.isValidMobileNumber(this.employee.mobileno)) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Mobile number must be exactly 10 digits.',
+        icon: 'error',
+        confirmButtonText: 'Try Again'
+      });
+      return;
+    }
+
     // Auto-generate the password and username
     const firstName = this.employee.fullname.split(' ')[0].toLowerCase();
     const mobileStart = this.employee.mobileno.substring(0, 3);
@@ -36,14 +48,24 @@ export class CreateEmployeeComponent implements OnInit {
     const apiUrl = 'http://localhost:8080/api/admins/add-admin';
     this.http.post(apiUrl, this.employee).subscribe(
       (response) => {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Employee added successfully!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
         console.log('Employee added successfully:', response);
-        alert('Employee added successfully!');
         this.resetForm();
         this.fetchEmployees(); // Refresh the employee list after adding a new employee
       },
       (error) => {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Error adding employee. Please try again.',
+          icon: 'error',
+          confirmButtonText: 'Try Again'
+        });
         console.error('Error adding employee:', error);
-        alert('Error adding employee. Please try again.');
       }
     );
   }
@@ -73,5 +95,34 @@ export class CreateEmployeeComponent implements OnInit {
       password: '',
       username: ''
     };
+  }
+
+  isValidMobileNumber(mobileno: string): boolean {
+    const mobilePattern = /^[0-9]{10}$/;
+    return mobilePattern.test(mobileno);
+  }
+
+  deleteEmployee(fullname: string) {
+    const apiUrl = `http://localhost:8080/api/admins/fullname/${fullname}`;
+    this.http.delete(apiUrl).subscribe(
+      () => {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Employee deleted successfully!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
+        this.fetchEmployees(); // Refresh the employee list after deletion
+      },
+      (error) => {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Error deleting employee. Please try again.',
+          icon: 'error',
+          confirmButtonText: 'Try Again'
+        });
+        console.error('Error deleting employee:', error);
+      }
+    );
   }
 }

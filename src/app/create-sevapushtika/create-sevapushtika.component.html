@@ -24,17 +24,18 @@
     <option *ngFor="let name of fullNames" [value]="name">{{ name }}</option>
   </select>
 
-  <form (ngSubmit)="onSubmit()">
-    <div class="section">
-      <label for="fullname">१. पूर्ण नाव:</label>
-      <input
-        type="text"
-        id="fullname"
-        [(ngModel)]="sevaPushtika.fullname"
-        name="fullname"
-        required
-      />
-    </div>
+  <form (ngSubmit)="onSubmit()" #sevaPushtikaForm="ngForm">
+   <div class="section">
+    <label for="fullname">१. पूर्ण नाव:</label>
+    <input
+      type="text"
+      id="fullname"
+      [(ngModel)]="sevaPushtika.fullname"
+      name="fullname"
+      required
+      #fullname="ngModel"
+    />
+   </div>
 
     <div class="section">
       <label for="empuniqueid">२. कर्मचारी अद्वितीय आयडी:</label>
@@ -43,7 +44,7 @@
         id="empuniqueid"
         [(ngModel)]="sevaPushtika.empuniqueid"
         name="empuniqueid"
-        required
+        required readonly
       />
     </div>
 
@@ -54,7 +55,7 @@
         id="appoint"
         [(ngModel)]="sevaPushtika.appoint"
         name="appoint"
-        required
+        required readonly
       />
     </div>
 
@@ -65,7 +66,7 @@
         id="office"
         [(ngModel)]="sevaPushtika.office"
         name="office"
-        required
+        required readonly
       />
     </div>
   
@@ -75,39 +76,39 @@
     </div>
     <div class="section">
       <label for="currentaddress">२ . (अ) सध्याचा पत्ता -</label>
-      <input type="text" id="currentaddress" [(ngModel)]="sevaPushtika.currentaddress" name="currentaddress" />
+      <input type="text" id="currentaddress" [(ngModel)]="sevaPushtika.currentaddress" name="currentaddress" required />
     </div>
     <div class="section">
       <label for="declaredvillageadd">( ब ) घोषित केलेला स्वग्राम व पत्ता -</label>
-      <input type="text" id="declaredvillageadd" [(ngModel)]="sevaPushtika.declaredvillageadd" name="declaredvillageadd" />
+      <input type="text" id="declaredvillageadd" [(ngModel)]="sevaPushtika.declaredvillageadd" name="declaredvillageadd" required />
     </div>
     <div class="section">
       <label for="nameresidofvictim">३. बळींचे नाव व राहण्याचे ठिकाण :</label>
-      <input type="text" id="nameresidofvictim" [(ngModel)]="sevaPushtika.nameresidofvictim" name="nameresidofvictim" />
+      <input type="text" id="nameresidofvictim" [(ngModel)]="sevaPushtika.nameresidofvictim" name="nameresidofvictim" required />
     </div>
     <div class="section">
       <label for="writedobcorrect">४. जन्मतारखेनक नक्की करून तो खोटी सन्मानाने लिहिता येईल तेव्हा अचूक लिहावा</label>
-      <input type="text" id="writedobcorrect" [(ngModel)]="sevaPushtika.writedobcorrect" name="writedobcorrect" />
+      <input type="text" id="writedobcorrect" [(ngModel)]="sevaPushtika.writedobcorrect" name="writedobcorrect" required/>
     </div>
     <div class="section">
       <label for="exactheight">५. तंतोतंत उंची -</label>
-      <input type="text" id="exactheight" [(ngModel)]="sevaPushtika.exactheight" name="exactheight" />
+      <input type="text" id="exactheight" [(ngModel)]="sevaPushtika.exactheight" name="exactheight" required/>
     </div>
     <div class="section">
       <label for="identifiedmarkonbody">६. ओळखपत्रासाठी अंगठ्याचे खुणा -</label>
-      <input type="text" id="identifiedmarkonbody" [(ngModel)]="sevaPushtika.identifiedmarkonbody" name="identifiedmarkonbody" />
+      <input type="text" id="identifiedmarkonbody" [(ngModel)]="sevaPushtika.identifiedmarkonbody" name="identifiedmarkonbody" required/>
     </div>
     <div class="section">
       <label for="eduatappoint">७. (अ) नियुक्तीच्या वेळी शैक्षणिक अहर्ता -</label>
-      <input type="text" id="eduatappoint" [(ngModel)]="sevaPushtika.eduatappoint" name="eduatappoint" />
+      <input type="text" id="eduatappoint" [(ngModel)]="sevaPushtika.eduatappoint" name="eduatappoint" required/>
     </div>
     <div class="section">
       <label for="eduafterappoint">( ब ) नियुक्तीनंतर प्राप्त केलेली शैक्षणिक अहर्ता -</label>
-      <input type="text" id="eduafterappoint" [(ngModel)]="sevaPushtika.eduafterappoint" name="eduafterappoint" />
+      <input type="text" id="eduafterappoint" [(ngModel)]="sevaPushtika.eduafterappoint" name="eduafterappoint" required/>
     </div>
     <div class="section">
       <label for="govsigndate">८. शासकीय कर्मचाऱ्यांची दिनांकित सही -</label>
-      <input type="text" id="govsigndate" [(ngModel)]="sevaPushtika.govsigndate" name="govsigndate" />
+      <input type="text" id="govsigndate" [(ngModel)]="sevaPushtika.govsigndate" name="govsigndate" required/>
     </div>
     <div class="section">
       <label for="datesignnddesign">९. क्रमांक १ ते २ सहीची नोंदी तपासल्यानंतर कार्यालय प्रमुखाची अथवा इतर कोणत्याही साक्षांकित अधिकाऱ्यांची दिनांकित सही व पदनाम</label>
