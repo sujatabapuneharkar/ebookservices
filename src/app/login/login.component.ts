@@ -10,7 +10,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
   constructor(private router: Router, private http: HttpClient) {}
 
   onSubmit(form: NgForm) {

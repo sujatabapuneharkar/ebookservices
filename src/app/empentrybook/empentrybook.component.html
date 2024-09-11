@@ -38,36 +38,33 @@
                 <td>{{ entry.entrytype }}</td>
                 <td>{{ entry.date }}</td>
                 <td><span class="status-signed">{{ entry.status }}</span></td>
-                <td><button class="btn" (click)="openPopup(entry.id)">More Details</button></td>
+     <td><button class="btn" (click)="handleEntryDetails(entry.id)">More Details</button></td>
             </tr>
         </tbody>
     </table>
 </div>
 <!-- Popup Container -->
-<div class="popup" *ngIf="isPopupOpen">
+<div *ngIf="isPopupOpen" class="popup">
     <div class="popup-content">
-        <span class="close" (click)="closePopup()">&times;</span>
-        <h1>वार्षिक वेतनवाढ - {{ popupData?.dateofappoint }}</h1>
-        <hr>
-        <label for="appointandsalary">नियुक्ती पदनाम व वेतनश्रेणी</label>
-        <input type="text" id="appointandsalary" [value]="popupData?.appointandsalary" readonly>
-        
-        <label for="positionofappoint">नियुक्ती स्थिती</label>
-        <input type="text" id="positionofappoint" [value]="popupData?.positionofappoint" readonly>
-        
-        <label for="salaryinperappoint">कायम नियुक्तीमधील वेतन</label>
-        <input type="text" id="salaryinperappoint" [value]="popupData?.salaryinperappoint" readonly>
-        
-        <label for="addpayontransferappoint">स्थानापन्न नियुक्तीबद्दल जादा वेतन</label>
-        <input type="text" id="addpayontransferappoint" [value]="popupData?.addpayontransferappoint" readonly>
-        
-        <label for="otherallowances">इतर भत्तालब्धी</label>
-        <input type="text" id="otherallowances" [value]="popupData?.otherallowances" readonly>
-        
-        <label for="dateofappoint">नियुक्ती दिनांक</label>
-        <div class="date-container">
-            <input type="date" id="dateofappoint" [value]="popupData?.dateofappoint" readonly>
-        </div>
-        <button disabled>अपडेट</button>
+      <span class="close" (click)="closePopup()">&times;</span>
+      <h1>वार्षिक वेतनवाढ</h1>
+      <hr>
+      <label for="appointandsalary">नियुक्ती पदनाम व वेतनश्रेणी</label>
+      <input type="text" id="appointandsalary" [(ngModel)]="appointandsalary">
+  
+      <label for="positionofappoint">नियुक्ती स्थिती</label>
+      <input type="text" id="positionofappoint" [(ngModel)]="positionofappoint">
+  
+      <label for="salaryinperappoint">कायम नियुक्तीमधील वेतन</label>
+      <input type="text" id="salaryinperappoint" [(ngModel)]="salaryinperappoint">
+  
+      <label for="addpayontransferappoint">स्थानापन्न नियुक्तीबद्दल जादा वेतन</label>
+      <input type="text" id="addpayontransferappoint" [(ngModel)]="addpayontransferappoint">
+  
+      <label for="otherallowances">इतर भत्तालब्धी</label>
+      <input type="text" id="otherallowances" [(ngModel)]="otherallowances">
+      <label for="dateofappoint">नियुक्ती दिनांक</label>
+      <input type="date" id="dateofappoint" [(ngModel)]="dateofappoint">
+      <button (click)="updatePopupData()">अपडेट</button>
     </div>
-</div>
+  </div>
