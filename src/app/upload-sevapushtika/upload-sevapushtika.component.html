@@ -1,89 +1,65 @@
 <app-navbar></app-navbar>
 <div class="navdiv">
-  <a href="clerk"><span class="nav-text">सेवा पुस्तिका यादी</span></a>
-    <a href="create-employee"><span class="nav-text">कर्मचारी तयार करा</span></a>
-    <a href="create-sevapushtika"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
-    <a href="upload-sevapushtika"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
+  <a routerLink="/clerk"><span class="nav-text">सेवा पुस्तिका यादी</span></a>
+  <a routerLink="/create-employee"><span class="nav-text">कर्मचारी तयार करा</span></a>
+  <a routerLink="/create-sevapushtika"><span class="nav-text">सेवा पुस्तिका तयार करा</span></a>
+  <a routerLink="/upload-sevapushtika"><span class="nav-text">अपलोड सेवा पुस्तिका</span></a>
   <span id="emp">Hello, Clerk</span>
   <a href="#" id="logout" class="nav-text" onclick="logout()">Logout</a>
 </div>
+
 <div class="container">
   <div class="title">अपलोड सेवा पुस्तिका</div>
   <div class="form-group">
-    <label for="fy-year">FY वर्ष</label>
+    <label for="year">FY वर्ष</label>
     <div class="input-wrapper">
-      <input type="number" id="fy-year" placeholder="वर्ष" />
+      <input type="number" id="year" [(ngModel)]="year" placeholder="वर्ष" />
       <i class="fas fa-calendar-alt"></i>
     </div>
     <label for="date">दिनांक</label>
     <div class="input-wrapper">
-      <input type="date" id="date" placeholder="DD/MM/YYYY" />
+      <input type="date" id="date" [(ngModel)]="date" placeholder="DD/MM/YYYY" />
     </div>
   </div>
   <div class="form-group">
-    <label for="employee">कर्मचारी</label>
+    <label for="fullname">कर्मचारी</label>
     <div class="input-wrapper">
-      <select id="employee">
-        <option></option>
-        <option>निवडा</option>
+      <select id="fullname" [(ngModel)]="selectedEmployee">
+        <option value="">निवडा</option>
+        <option *ngFor="let name of fullname" [value]="name">{{ name }}</option>
       </select>
     </div>
-    <label for="file">फोटो/फाइल</label>
+    <label for="photo">फोटो/फाइल</label>
     <div class="input-wrapper">
-      <input type="file" id="file" />
+      <input type="file" id="photo" (change)="onFileChange($event)" />
       <i class="fas fa-upload"></i>
     </div>
   </div>
-  <button class="upload-btn">अपलोड</button>
+  <button class="upload-btn" (click)="uploadSevaPushtika()">अपलोड</button>
 </div>
 
 <table>
-    <thead>
-        <tr>
-            <th>अनु.क्र.</th>
-            <th>FY वर्ष</th>
-            <th>दिनांक</th>
-            <th>कर्मचारी</th>
-            <th>फोटो/फाइल</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>2029-20</td>
-            <td>20-10-2024</td>
-            <td>यश गोटे</td>
-            <td><a href="#" class="link">
-                पहा</a></td>
-            <td class="action-buttons">
-                <button class="delete"><i class="fa-solid fa-trash-can"></i></button>
-            <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-            </td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>2019-20</td>
-            <td>20-10-2024</td>
-            <td>अयान मिर्जा</td>
-            <td><a href="#" class="link">
-                पहा</a></td>
-            <td class="action-buttons">
-                <button class="delete"><i class="fa-solid fa-trash-can"></i></button>
-            <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>2020-21</td>
-            <td>20-10-2024</td>
-            <td>शेहबाज़ खान</td>
-            <td><a href="#" class="link">
-                पहा</a></td>
-            <td class="action-buttons">
-                <button class="delete"><i class="fa-solid fa-trash-can"></i></button>
-            <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-            </td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th>अनु.क्र.</th>
+      <th>FY वर्ष</th>
+      <th>दिनांक</th>
+      <th>कर्मचारी</th>
+      <th>फोटो/फाइल</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of uploadedData; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ data.year }}</td>
+      <td>{{ data.date }}</td>
+      <td>{{ data.fullname }}</td>
+      <td><a (click)="viewPhoto(data.id)" class="link">see</a></td>
+      <td class="action-buttons">
+        <button class="delete"><i class="fa-solid fa-trash-can"></i></button>
+        <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+      </td>
+    </tr>
+  </tbody>
 </table>
