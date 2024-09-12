@@ -94,4 +94,31 @@ export class UploadSevapushtikaComponent implements OnInit {
     const photoUrl = `http://localhost:8080/api/uploadsevapushtika/get-photo/${id}`;
     window.open(photoUrl, '_blank');
   }
+
+  // Delete data from the backend
+  deleteSevaPushtika(id: number): void {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This will permanently delete the data!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.http.delete(`http://localhost:8080/api/uploadsevapushtika/delete/${id}`)
+          .subscribe(
+            () => {
+              Swal.fire('Deleted!', 'Data has been deleted.', 'success');
+              this.fetchUploadedData(); // Refresh data after successful deletion
+            },
+            (error) => {
+              Swal.fire('Error', 'Failed to delete data.', 'error');
+              console.error('Error deleting data:', error);
+            }
+          );
+      }
+    });
+  }
 }

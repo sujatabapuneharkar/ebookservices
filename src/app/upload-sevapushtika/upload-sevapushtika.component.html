@@ -37,7 +37,6 @@
   </div>
   <button class="upload-btn" (click)="uploadSevaPushtika()">अपलोड</button>
 </div>
-
 <table>
   <thead>
     <tr>
@@ -55,9 +54,9 @@
       <td>{{ data.year }}</td>
       <td>{{ data.date }}</td>
       <td>{{ data.fullname }}</td>
-      <td><a (click)="viewPhoto(data.id)" class="link">see</a></td>
+      <td><a (click)="viewPhoto(data.id)" class="link">पहा</a></td>
       <td class="action-buttons">
-        <button class="delete"><i class="fa-solid fa-trash-can"></i></button>
+        <button class="delete" (click)="deleteSevaPushtika(data.id)"><i class="fa-solid fa-trash-can"></i></button>
         <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
       </td>
     </tr>
